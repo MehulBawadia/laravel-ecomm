@@ -25,6 +25,8 @@
 
     @yield('content')
 
+    @include('partials._footer')
+
     <script src="{{ asset('/js/app.js') }}"></script>
     @yield('pageScripts')
 </body>
