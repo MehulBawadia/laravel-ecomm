@@ -19,6 +19,8 @@
 <body class="bg-white font-Lato">
     @include('partials._topHeader')
 
+    @include('partials._logo_and_search')
+
     @yield('content')
 
     <script src="{{ asset('/js/app.js') }}"></script>
