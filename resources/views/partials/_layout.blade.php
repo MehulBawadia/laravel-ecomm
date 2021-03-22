@@ -21,6 +21,8 @@
 
     @include('partials._logo_and_search')
 
+    @include('partials._navigation')
+
     @yield('content')
 
     <script src="{{ asset('/js/app.js') }}"></script>
