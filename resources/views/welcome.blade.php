@@ -351,6 +351,21 @@
             </div>
         </div>
     </section>
+
+    <section class="mainFeaturedProduct py-32 px-4 bg-blue-500">
+        <div class="container mx-auto">
+            <div class="sm:flex justify-around">
+                <div class="flex-none sm:w-1/3">
+                    <img src="{{ asset('/images/products/main-featured-1.png') }}" alt="Main Featured Product Name" title="Main Featured Product Name" class="block mx-auto" />
+                </div>
+                <div class="mt-16 sm:mt-0 sm:ml-16">
+                    <h3 class="text-white font-Rubik font-bold text-5xl">Main Featured<br />Product Name</h3>
+
+                    <p class="mt-12 text-gray-100">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non minima deleniti, alias omnis facilis deserunt expedita recusandae ipsam provident itaque aperiam doloribus harum quis beatae necessitatibus excepturi saepe atque quam. Alias minus, sapiente laborum, dolorem unde excepturi omnis vero est consequuntur a? Voluptate esse ex, veniam eligendi placeat nobis laboriosam mollitia officiis iste sequi rerum et, dicta deserunt accusamus veritatis, reiciendis autem, provident ad similique quis voluptatibus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('pageScripts')
