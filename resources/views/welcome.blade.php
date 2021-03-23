@@ -2,6 +2,7 @@
 
 @section('title')
     <title>Home Page | {{ config('app.name') }}</title>
+    <link rel="canonical" href="{{ route('homePage') }}" />
 @endsection
 
 @section('pageStyles')
