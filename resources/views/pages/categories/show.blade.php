@@ -2,6 +2,8 @@
 
 @section('title')
     <title>Category Name | {{ config('app.name') }}</title>
+    <meta name="description" content="EComm is a Laravel based E-Commerce web application built by Mehul Bawadia.">
+    <meta name="keywords" content="ECommerce, web application, website, products, online selling">
     <link rel="canonical" href="{{ route('categories.show', 'category-1') }}" />
 @endsection
 
