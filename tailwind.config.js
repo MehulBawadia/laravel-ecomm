@@ -799,6 +799,7 @@ module.exports = {
     justifyItems: ['responsive'],
     justifySelf: ['responsive'],
     letterSpacing: ['responsive'],
+    lineClamp: ['responsive', 'hover'],
     lineHeight: ['responsive'],
     listStylePosition: ['responsive'],
     listStyleType: ['responsive'],
@@ -856,5 +857,7 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }
