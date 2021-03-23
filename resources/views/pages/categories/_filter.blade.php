@@ -1,4 +1,4 @@
-<div class="w-full md:w-1/4 lg:w-1/5">
+<div class="w-full sm:w-1/3 md:w-1/4 lg:w-1/5">
     <div class="categoriesList">
         <div class="border-b">
             <h3 class="uppercase text-gray-900 font-Rubik font-bold pb-2">
