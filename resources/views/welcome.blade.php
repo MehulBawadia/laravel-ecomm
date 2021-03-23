@@ -164,6 +164,193 @@
             </div>
         </div>
     </section>
+
+    <section class="topProducts py-16 px-4">
+        <div class="container mx-auto">
+            <div class="text-center">
+                <h3 class="font-Rubik font-bold uppercase text-4xl leading-9">Top Products</h3>
+
+                <ul class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 font-Rubik font-semibold mt-12">
+                    <li class="mt-4"><a href="#" class="block w-full bg-blue-500 text-white rounded py-1" title="Filter All Products" data-filter="all">All</a></li>
+                    <li class="mt-4"><a href="#" class="block w-full text-gray-500 rounded py-1 hover:text-white hover:bg-blue-500" title="Filter Latest Products" data-filter="latest">Latest</a></li>
+                    <li class="mt-4"><a href="#" class="block w-full text-gray-500 rounded py-1 hover:text-white hover:bg-blue-500" title="Filter Featured Products" data-filter="featured">Featured</a></li>
+                    <li class="mt-4"><a href="#" class="block w-full text-gray-500 rounded py-1 hover:text-white hover:bg-blue-500" title="Filter Top Rated Products" data-filter="topRated">Top Rated</a></li>
+                    <li class="mt-4"><a href="#" class="block w-full text-gray-500 rounded py-1 hover:text-white hover:bg-blue-500" title="Filter Best Seller Products" data-filter="bestSeller">Best Seller</a></li>
+                </ul>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-16">
+                <div class="productItem bg-white hover:shadow-md transition ease-in-out duration-150" data-category="latest">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-1.jpg') }}" alt="Product 1" title="Product 1" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 1</a>
+                        </div>
+                        <div class="mt-2 text-blue-500 font-Rubik font-semibold">
+                            &#8377; 15,000.00
+                        </div>
+                    </div>
+                </div>
+
+                <div class="productItem bg-white hover:shadow-md transition ease-in-out duration-150" data-category="featured">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-2.jpg') }}" alt="Product 2" title="Product 2" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 2</a>
+                        </div>
+                        <div class="mt-2 text-blue-500 font-Rubik font-semibold">
+                            &#8377; 10,000.00
+                        </div>
+                    </div>
+                </div>
+
+                <div class="productItem bg-white hover:shadow-md transition ease-in-out duration-150" data-category="bestSeller">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-3.jpg') }}" alt="Product 3" title="Product 3" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 3</a>
+                        </div>
+                        <div class="mt-2 text-blue-500 font-Rubik font-semibold">
+                            &#8377; 20,000.00
+                        </div>
+                    </div>
+                </div>
+
+                <div class="productItem bg-white hover:shadow-md transition ease-in-out duration-150" data-category="topRated">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-4.jpg') }}" alt="Product 4" title="Product 4" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 4</a>
+                        </div>
+                        <div class="mt-2 font-Rubik">
+                            <span class="text-gray-400 line-through">&#8377; 25,000.00</span>
+                            <span class="text-blue-500 font-semibold">&#8377; 18,000.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="productItem bg-white hover:shadow-md transition ease-in-out duration-150" data-category="latest">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-5.jpg') }}" alt="Product 5" title="Product 5" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 5</a>
+                        </div>
+                        <div class="mt-2 font-Rubik">
+                            <span class="text-blue-500 font-semibold">&#8377; 30,000.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="productItem bg-white hover:shadow-md transition ease-in-out duration-150" data-category="topRated">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-6.jpg') }}" alt="Product 6" title="Product 6" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 6</a>
+                        </div>
+                        <div class="mt-2 font-Rubik">
+                            <span class="text-blue-500 font-semibold">&#8377; 29,500.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="productItem bg-white hover:shadow-md transition ease-in-out duration-150" data-category="featured">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-7.jpg') }}" alt="Product 7" title="Product 7" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 7</a>
+                        </div>
+                        <div class="mt-2 font-Rubik">
+                            <span class="text-blue-500 font-semibold">&#8377; 22,250.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="productItem bg-white hover:shadow-md transition ease-in-out duration-150" data-category="bestSeller">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-8.jpg') }}" alt="Product 8" title="Product 8" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 8</a>
+                        </div>
+                        <div class="mt-2 font-Rubik">
+                            <span class="text-blue-500 font-semibold">&#8377; 15,750.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('pageScripts')
@@ -192,6 +379,26 @@
                     items: 4,
                 }
             }
+        });
+
+        var products = $('.productItem');
+        $('.topProducts ul li a').on('click', function (e) {
+            e.preventDefault();
+
+            $('.topProducts ul li a').removeClass('bg-blue-500 text-white').addClass('text-gray-500');
+            $(this).addClass('bg-blue-500 text-white').removeClass('text-gray-500');
+
+            var selectedCategoryFilter = $(this).data('filter');
+
+            products.hide().filter(function () {
+                if (selectedCategoryFilter === 'all') {
+                    return $(this).data('category') !== selectedCategoryFilter;
+                }
+
+                return $(this).data('category') === selectedCategoryFilter;
+            }).show();
+
+            return false;
         });
     </script>
 @endsection
