@@ -27,7 +27,27 @@
 
     @include('partials._footer')
 
+    <div id="backToTop" class="flex items-center justify-center bg-blue-500 rounded w-10 h-10 text-right text-3xl fixed bottom-0 right-0 mr-8 my-8 cursor-pointer goToTop">
+        <i class="fas fa-arrow-up text-white"></i>
+    </div>
+
     <script src="{{ asset('/js/app.js') }}"></script>
+    <script>
+        $('#backToTop').hide();
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('#backToTop').slideDown();
+            } else {
+                $('#backToTop').slideUp();
+            }
+        });
+        $('#backToTop').click(function(){
+            $('html, body').animate({
+                scrollTop: 0
+            }, 800);
+        });
+
+    </script>
     @yield('pageScripts')
 </body>
 </html>
