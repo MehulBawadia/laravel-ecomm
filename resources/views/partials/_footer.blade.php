@@ -3,7 +3,7 @@
         <div class="container mx-auto">
             <div class="flex flex-wrap justify-between px-4 py-8">
                 <div class="mt-5">
-                    <h4 class="text-gray-900 text-sm font-semibold font-Rubik uppercase">Contact Information</h4>
+                    <h2 class="text-gray-900 text-sm font-semibold font-Rubik uppercase">Contact Information</h2>
 
                     <p class="mt-5 text-gray-600 text-sm">Call Us 24/7 Free</p>
 
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="mt-5">
-                    <h4 class="text-gray-900 text-sm font-semibold font-Rubik uppercase">Company</h4>
+                    <h2 class="text-gray-900 text-sm font-semibold font-Rubik uppercase">Company</h2>
 
                     <ul class="mt-5">
                         <li class="text-sm my-3"><a href="#" class="text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">About Us</a></li>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="mt-5">
-                    <h4 class="text-gray-900 text-sm font-semibold font-Rubik uppercase">Explore</h4>
+                    <h2 class="text-gray-900 text-sm font-semibold font-Rubik uppercase">Explore</h2>
 
                     <ul class="mt-5">
                         <li class="text-sm my-3"><a href="#" class="text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Gift Product</a></li>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="mt-5">
-                    <h4 class="text-gray-900 text-sm font-semibold font-Rubik uppercase">Our Location</h4>
+                    <h2 class="text-gray-900 text-sm font-semibold font-Rubik uppercase">Our Location</h2>
 
                     <img src="{{ asset('/images/bg-map-footer.jpg') }}" alt="{{ config('app.name') }} Location" title="{{ config('app.name') }} Location" class="mt-5" />
                 </div>
