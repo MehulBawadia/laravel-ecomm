@@ -19,4 +19,14 @@
             </div>
         </div>
     </section>
+
+    <section class="filtersAndProducts">
+        <div class="container mx-auto">
+            <div class="px-4 py-16 flex flex-col sm:flex-row">
+                @include('pages.categories._filter')
+
+                <div class="w-full md:2/3 lg:w-4/5"></div>
+            </div>
+        </div>
+    </section>
 @endsection
