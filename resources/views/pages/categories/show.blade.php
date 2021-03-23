@@ -18,7 +18,9 @@
                         <li class="text-blue-500 font-Rubik">Category 1</li>
                     </ul>
 
-                    <h1 class="font-Rubik font-bold uppercase text-2xl leading-6 mt-2 sm:mt-0">Category 1</h1>
+                    <h1 class="font-Rubik font-bold uppercase text-2xl leading-6 mt-2 sm:mt-0">
+                        <small class="text-sm text-gray-400 mr-2">Products in </small> Category 1
+                    </h1>
                 </div>
             </div>
         </div>
