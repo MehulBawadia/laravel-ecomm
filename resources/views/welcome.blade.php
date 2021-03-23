@@ -366,6 +366,41 @@
             </div>
         </div>
     </section>
+
+    <section class="stats py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="flex items-center border-l-2 pl-8 my-4">
+                    <div class="text-blue-500 text-3xl w-12"><i class="far fa-thumbs-up"></i></div>
+                    <div class="ml-5">
+                        <h4 class="uppercase font-Rubik font-bold text-blue-500">100% Satisfaction</h4>
+                        <p class="text-sm text-gray-400">If you are unable</p>
+                    </div>
+                </div>
+                <div class="flex items-center border-l-2 pl-8 my-4">
+                    <div class="text-blue-500 text-3xl w-12"><i class="far fa-credit-card"></i></div>
+                    <div class="ml-5">
+                        <h4 class="uppercase font-Rubik font-bold text-blue-500">Save 20% When You</h4>
+                        <p class="text-sm text-gray-400">Use Credit Card</p>
+                    </div>
+                </div>
+                <div class="flex items-center border-l-2 pl-8 my-4">
+                    <div class="text-blue-500 text-3xl w-12"><i class="fas fa-shipping-fast"></i></div>
+                    <div class="ml-5">
+                        <h4 class="uppercase font-Rubik font-bold text-blue-500">Fast Free Shipment</h4>
+                        <p class="text-sm text-gray-400">Load any computers'</p>
+                    </div>
+                </div>
+                <div class="flex items-center border-l-2 pl-8 my-4">
+                    <div class="text-blue-500 text-3xl w-12"><i class="fas fa-money-check"></i></div>
+                    <div class="ml-5">
+                        <h4 class="uppercase font-Rubik font-bold text-blue-500">30 Days Money Back</h4>
+                        <p class="text-sm text-gray-400">If unsatisfied</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('pageScripts')
