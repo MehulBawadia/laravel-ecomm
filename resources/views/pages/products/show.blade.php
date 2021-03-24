@@ -151,8 +151,9 @@
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, corporis atque illum dolore voluptates illo repellat adipisci magnam iusto quia ipsam voluptatibus eveniet facilis eius unde placeat necessitatibus, ipsa dolores! Rerum alias nulla, optio laboriosam quasi facere vero, eligendi amet suscipit autem nihil sit, eveniet animi, dolores error placeat porro aspernatur provident corporis! Rerum consequuntur consectetur reiciendis, odit, dignissimos quasi quisquam. Placeat a corporis suscipit minus illo fugiat rem quod. Reprehenderit perspiciatis eaque eos ducimus et. Sit aperiam, maiores harum.
                     </p>
                 </div>
+
                 <div id="reviews" class="py-8">
-                    <div class="flex justify-between gap-8">
+                    <div class="flex flex-col md:flex-row justify-between gap-8">
                         <div class="w-full md:w-1/2">
                             <h3 class="font-Rubik font-bold text-xl uppercase leading-6 mt-2 sm:mt-0">
                                 2 Reviews
@@ -160,9 +161,9 @@
 
                             <div class="flex mt-8">
                                 <div class="flex-none">
-                                    <img src="{{ asset('/images/user-default.jpg') }}" alt="User Full Name" title="User Full Name" class="rounded" />
+                                    <img src="{{ asset('/images/user-default.jpg') }}" alt="User Full Name" title="User Full Name" class="rounded hidden md:inline-block" />
                                 </div>
-                                <div class="ml-3">
+                                <div class="md:ml-3">
                                     <div>
                                         <span class="text-gray-900">User Full Name</span>
                                         <span class="text-gray-500">has given</span>
@@ -181,9 +182,9 @@
 
                             <div class="flex mt-8">
                                 <div class="flex-none">
-                                    <img src="{{ asset('/images/user-default.jpg') }}" alt="User Full Name" title="User Full Name" class="rounded" />
+                                    <img src="{{ asset('/images/user-default.jpg') }}" alt="User Full Name" title="User Full Name" class="rounded hidden md:inline-block" />
                                 </div>
-                                <div class="ml-3">
+                                <div class="md:ml-3">
                                     <div>
                                         <span class="text-gray-900">User Full Name</span>
                                         <span class="text-gray-500">has given</span>
@@ -210,15 +211,15 @@
                             <form action="#" method="POST" class="mt-8">
                                 @csrf
 
-                                <div class="flex">
+                                <div class="flex flex-col sm:flex-row">
                                     <label class="text-gray-500">Your Rating:</label>
 
-                                    <div class="flex items-center ml-3 text-sm">
+                                    <div class="flex items-center sm:ml-3 text-sm">
                                         <input type="radio" name="rating" value="1" id="1_star">
                                         <label for="1_star" class="text-blue-500 ml-1"><i class="fas fa-star"></i></label>
                                     </div>
 
-                                    <div class="flex items-center ml-3 text-sm">
+                                    <div class="flex items-center sm:ml-3 text-sm">
                                         <input type="radio" name="rating" value="2" id="2_star">
                                         <label for="2_star" class="text-blue-500 ml-1">
                                             <i class="fas fa-star"></i>
@@ -226,7 +227,7 @@
                                         </label>
                                     </div>
 
-                                    <div class="flex items-center ml-3 text-sm">
+                                    <div class="flex items-center sm:ml-3 text-sm">
                                         <input type="radio" name="rating" value="3" id="3_star">
                                         <label for="3_star" class="text-blue-500 ml-1">
                                             <i class="fas fa-star"></i>
@@ -235,7 +236,7 @@
                                         </label>
                                     </div>
 
-                                    <div class="flex items-center ml-3 text-sm">
+                                    <div class="flex items-center sm:ml-3 text-sm">
                                         <input type="radio" name="rating" value="4" id="4_star">
                                         <label for="4_star" class="text-blue-500 ml-1">
                                             <i class="fas fa-star"></i>
@@ -245,7 +246,7 @@
                                         </label>
                                     </div>
 
-                                    <div class="flex items-center ml-3 text-sm">
+                                    <div class="flex items-center sm:ml-3 text-sm">
                                         <input type="radio" name="rating" value="5" id="5_star">
                                         <label for="5_star" class="text-blue-500 ml-1">
                                             <i class="fas fa-star"></i>
