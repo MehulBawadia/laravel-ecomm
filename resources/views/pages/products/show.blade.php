@@ -275,15 +275,15 @@
                                 </div>
 
                                 <div class="w-full">
-                                    <textarea name="review" id="review" class="mt-5 resize-none border px-5 py-2 focus:outline-none focus:ring w-full" placeholder="Your Review *" rows="8">{{ old('review') }}</textarea>
+                                    <textarea name="review" id="review" class="mt-5 resize-none border px-5 py-2 focus:outline-none focus:border-blue-500 w-full" placeholder="Your Review *" rows="8">{{ old('review') }}</textarea>
                                 </div>
 
                                 <div class="flex justify-center items-center gap-6 mt-5">
                                     <div class="w-1/2">
-                                        <input type="text" name="full_name" id="fullName" class="border px-5 py-2 focus:outline-none focus:ring w-full" placeholder="Full Name *" />
+                                        <input type="text" name="full_name" id="fullName" class="border px-5 py-2 focus:outline-none focus:border-blue-500 w-full" placeholder="Full Name *" />
                                     </div>
                                     <div class="w-1/2">
-                                        <input type="email" name="email" id="email" class="border px-5 py-2 focus:outline-none focus:ring w-full" placeholder="E-Mail *" />
+                                        <input type="email" name="email" id="email" class="border px-5 py-2 focus:outline-none focus:border-blue-500 w-full" placeholder="E-Mail *" />
                                     </div>
                                 </div>
 
