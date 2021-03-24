@@ -8,14 +8,14 @@
 @endsection
 
 @section('content')
-    <section class="breadCrumbs">
+    <section class="breadCrumbs border-b">
         <div class="container mx-auto">
-            <div class="py-4 px-4">
-                <div class="border-b pb-3 flex flex-col sm:flex-row justify-between items-center">
-                    <ul class="flex text-sm">
-                        <li><a href="{{ route('homePage') }}" class="font-Rubik text-gray-400 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Home</a></li>
-                        <li class="mx-2 text-gray-400 font-Rubik">&gt;</li>
-                        <li class="text-blue-500 font-Rubik">Cart</li>
+            <div class="py-3 px-4">
+                <div class="flex flex-col sm:flex-row justify-between items-center">
+                    <ul class="flex items-center font-Rubik text-sm">
+                        <li><a href="{{ route('homePage') }}" class="text-gray-400 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Home</a></li>
+                        <li class="mx-2 text-gray-400 text-xs"><i class="fas fa-chevron-right"></i></li>
+                        <li class="text-blue-500">Cart</li>
                     </ul>
 
                     <h1 class="font-Rubik font-bold uppercase text-2xl leading-6 mt-2 sm:mt-0">
