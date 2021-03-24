@@ -10,7 +10,7 @@
                 <div class="absolute top-0 left-0 mt-2 ml-2 text-gray-400"><i class="fas fa-search"></i></div>
             </div>
             <div class="mt-5 sm:mt-0">
-                <a href="#" class="text-xl text-white hover:text-blue-900 focus:text-blue-900 focus:outline-none transition ease-in-out duration-150" title="Cart"><i class="fas fa-shopping-cart"></i> : <span class="px-1">0</span></a>
+                <a href="{{ route('cart.index') }}" class="text-xl text-white hover:text-blue-900 focus:text-blue-900 focus:outline-none transition ease-in-out duration-150" title="Cart"><i class="fas fa-shopping-cart"></i> : <span class="px-1">2</span></a>
             </div>
         </div>
     </div>

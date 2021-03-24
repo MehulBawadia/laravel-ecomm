@@ -7,4 +7,6 @@ Route::namespace('Pages')->group(function () {
     Route::get('/category/{name}', 'CategoriesController@show')->name('categories.show');
 
     Route::get('/product/{name}', 'ProductsController@show')->name('products.show');
+
+    Route::get('/cart', 'CartController@index')->name('cart.index');
 });
