@@ -86,7 +86,7 @@
                             <a href="#" class="text-gray-400 hover:text-blue-500 focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Tag 1</a>,
                             <a href="#" class="text-gray-400 hover:text-blue-500 focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Tag 2</a>
                         </div>
-                        <div class="border-b py-3 flex items-center">
+                        <div class="py-3 flex items-center">
                             <div class="text-gray-900">Share:</div>
 
                             <a href="https://www.facebook.com/sharer.php?u={{ route('products.show', 'product-1') }}" target="_blank" rel="nofollow noopener" class="text-sm text-gray-500 hover:text-blue-500 focus:text-blue-500 focus:outline-none">
