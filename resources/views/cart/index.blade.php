@@ -13,9 +13,9 @@
             <div class="py-3 px-4">
                 <div class="flex flex-col sm:flex-row justify-between items-center">
                     <ul class="flex items-center font-Rubik text-sm">
-                        <li><a href="{{ route('homePage') }}" class="text-gray-400 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Home</a></li>
+                        <li><a href="{{ route('homePage') }}" class="text-blue-500 hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150">Home</a></li>
                         <li class="mx-2 text-gray-400 text-xs"><i class="fas fa-chevron-right"></i></li>
-                        <li class="text-blue-500">Cart</li>
+                        <li class="text-gray-400">Cart</li>
                     </ul>
 
                     <h1 class="font-Rubik font-bold uppercase text-2xl leading-6 mt-2 sm:mt-0">
