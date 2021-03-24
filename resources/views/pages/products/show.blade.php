@@ -26,9 +26,27 @@
 
     <section class="productDetails">
         <div class="container mx-auto">
-            <div class="px-4 py-16 flex flex-col lg:flex-row gap-8">
+            <div class="px-4 py-16 flex flex-col lg:flex-row gap-6">
                 <div class="w-full lg:w-1/2">
-                    <img src="{{ asset('/images/products/demo-image-1.jpg') }}" alt="Product 1" title="Product 1" class="block mx-auto" />
+                    <img src="{{ asset('/images/products/demo-image-1.jpg') }}" alt="Product 1" title="Product 1" class="block mx-auto lg:m-0" id="mainProductImage" />
+
+                    <div class="flex flex-wrap gap-5 mt-5" id="productGallery">
+                        <a href="#" data-image="{{ asset('/images/products/demo-image-1.jpg') }}" data-zoom-image="{{ asset('/images/products/demo-image-1.jpg') }}">
+                            <img src="{{ asset('/images/products/demo-image-1.jpg') }}" alt="Product 1" title="Product 1" class="w-32">
+                        </a>
+                        <a href="#" data-image="{{ asset('/images/products/demo-image-2.jpg') }}" data-zoom-image="{{ asset('/images/products/demo-image-2.jpg') }}">
+                            <img src="{{ asset('/images/products/demo-image-2.jpg') }}" alt="Product 1" title="Product 1" class="w-32">
+                        </a>
+                        <a href="#" data-image="{{ asset('/images/products/demo-image-3.jpg') }}" data-zoom-image="{{ asset('/images/products/demo-image-3.jpg') }}">
+                            <img src="{{ asset('/images/products/demo-image-3.jpg') }}" alt="Product 1" title="Product 1" class="w-32">
+                        </a>
+                        <a href="#" data-image="{{ asset('/images/products/demo-image-4.jpg') }}" data-zoom-image="{{ asset('/images/products/demo-image-4.jpg') }}">
+                            <img src="{{ asset('/images/products/demo-image-4.jpg') }}" alt="Product 1" title="Product 1" class="w-32">
+                        </a>
+                        <a href="#" data-image="{{ asset('/images/products/demo-image-5.jpg') }}" data-zoom-image="{{ asset('/images/products/demo-image-5.jpg') }}">
+                            <img src="{{ asset('/images/products/demo-image-5.jpg') }}" alt="Product 1" title="Product 1" class="w-32">
+                        </a>
+                    </div>
                 </div>
                 <div class="w-full lg:w-1/2">
                     <h1 class="font-Rubik font-bold text-4xl leading-6 mt-2 sm:mt-0">
@@ -112,4 +130,21 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('pageScripts')
+    <script src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+    <script>
+        var productImage = $("#mainProductImage");
+
+        productImage.ezPlus({
+            responsive: true,
+            easing: true,
+            zoomType: "lens",
+            lensSize: 150,
+            lensShape: "round",
+            containLensZoom: true,
+            gallery: "productGallery",
+        });
+    </script>
 @endsection
