@@ -47,7 +47,7 @@
                                 </div>
 
                                 <div class="my-2">
-                                    <a href="#" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 1</a>
+                                    <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 1</a>
                                 </div>
                                 <div class="my-2 text-blue-500 font-Rubik font-semibold">
                                     &#8377; 15,000.00
@@ -78,7 +78,7 @@
                                 </div>
 
                                 <div class="my-2">
-                                    <a href="#" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 1</a>
+                                    <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 1</a>
                                 </div>
                                 <div class="my-2 text-blue-500 font-Rubik font-semibold">
                                     &#8377; 20,000.00
@@ -109,7 +109,7 @@
                                 </div>
 
                                 <div class="my-2">
-                                    <a href="#" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 3</a>
+                                    <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 3</a>
                                 </div>
                                 <div class="my-2 text-blue-500 font-Rubik font-semibold">
                                     &#8377; 18,500.00
@@ -140,7 +140,7 @@
                                 </div>
 
                                 <div class="my-2">
-                                    <a href="#" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 4</a>
+                                    <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 4</a>
                                 </div>
                                 <div class="my-2 text-blue-500 font-Rubik font-semibold">
                                     &#8377; 10,000.00
@@ -171,7 +171,7 @@
                                 </div>
 
                                 <div class="my-2">
-                                    <a href="#" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 5</a>
+                                    <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 5</a>
                                 </div>
                                 <div class="my-2 text-blue-500 font-Rubik font-semibold">
                                     &#8377; 25,000.00
@@ -202,7 +202,7 @@
                                 </div>
 
                                 <div class="my-2">
-                                    <a href="#" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 6</a>
+                                    <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 6</a>
                                 </div>
                                 <div class="my-2 text-blue-500 font-Rubik font-semibold">
                                     &#8377; 27,460.00
@@ -233,7 +233,7 @@
                                 </div>
 
                                 <div class="my-2">
-                                    <a href="#" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 7</a>
+                                    <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 7</a>
                                 </div>
                                 <div class="my-2 text-blue-500 font-Rubik font-semibold">
                                     &#8377; 6,800.00
@@ -264,7 +264,7 @@
                                 </div>
 
                                 <div class="my-2">
-                                    <a href="#" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 8</a>
+                                    <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 text-xl font-Rubik font-bold hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Product 8</a>
                                 </div>
                                 <div class="my-2 text-blue-500 font-Rubik font-semibold">
                                     &#8377; 10,000.00

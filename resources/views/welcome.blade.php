@@ -75,7 +75,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 1</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 1</a>
                         </div>
                         <div class="mt-2 text-blue-500 font-Rubik font-semibold">
                             &#8377; 15,000.00
@@ -95,7 +95,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 2</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 2</a>
                         </div>
                         <div class="mt-2 text-blue-500 font-Rubik font-semibold">
                             &#8377; 10,000.00
@@ -115,7 +115,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 3</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 3</a>
                         </div>
                         <div class="mt-2 text-blue-500 font-Rubik font-semibold">
                             &#8377; 20,000.00
@@ -135,7 +135,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 4</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 4</a>
                         </div>
                         <div class="mt-2 font-Rubik">
                             <span class="text-gray-400 line-through">&#8377; 25,000.00</span>
@@ -196,7 +196,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 1</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 1</a>
                         </div>
                         <div class="mt-2 text-blue-500 font-Rubik font-semibold">
                             &#8377; 15,000.00
@@ -217,7 +217,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 2</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 2</a>
                         </div>
                         <div class="mt-2 text-blue-500 font-Rubik font-semibold">
                             &#8377; 10,000.00
@@ -238,7 +238,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 3</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 3</a>
                         </div>
                         <div class="mt-2 text-blue-500 font-Rubik font-semibold">
                             &#8377; 20,000.00
@@ -259,7 +259,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 4</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 4</a>
                         </div>
                         <div class="mt-2 font-Rubik">
                             <span class="text-gray-400 line-through">&#8377; 25,000.00</span>
@@ -281,7 +281,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 5</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 5</a>
                         </div>
                         <div class="mt-2 font-Rubik">
                             <span class="text-blue-500 font-semibold">&#8377; 30,000.00</span>
@@ -302,7 +302,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 6</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 6</a>
                         </div>
                         <div class="mt-2 font-Rubik">
                             <span class="text-blue-500 font-semibold">&#8377; 29,500.00</span>
@@ -323,7 +323,7 @@
                             <span><i class="fas fa-star"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 7</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 7</a>
                         </div>
                         <div class="mt-2 font-Rubik">
                             <span class="text-blue-500 font-semibold">&#8377; 22,250.00</span>
@@ -344,7 +344,7 @@
                             <span><i class="fas fa-star text-blue-500"></i></span>
                         </div>
                         <div class="mt-2">
-                            <a href="#" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 8</a>
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 8</a>
                         </div>
                         <div class="mt-2 font-Rubik">
                             <span class="text-blue-500 font-semibold">&#8377; 15,750.00</span>
