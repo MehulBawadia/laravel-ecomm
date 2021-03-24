@@ -117,8 +117,8 @@
                         </div>
                         <div class="border-b py-3">
                             <span class="text-gray-900">Tags:</span>
-                            <a href="#" class="text-gray-400 hover:text-blue-500 focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Tag 1</a>,
-                            <a href="#" class="text-gray-400 hover:text-blue-500 focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Tag 2</a>
+                            <a href="{{ route('tags.show', 'tag-1') }}" class="text-gray-400 hover:text-blue-500 focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Tag 1</a>,
+                            <a href="{{ route('tags.show', 'tag-1') }}" class="text-gray-400 hover:text-blue-500 focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Tag 2</a>
                         </div>
                         <div class="py-3 flex items-center">
                             <div class="text-gray-900">Share:</div>
