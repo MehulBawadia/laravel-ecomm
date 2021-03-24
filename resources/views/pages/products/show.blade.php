@@ -278,6 +278,96 @@
             </div>
         </div>
     </section>
+
+    <section class="thisWeeksDeals py-16">
+        <div class="container mx-auto">
+            <h3 class="font-Rubik font-bold uppercase text-4xl leading-9 pl-4">Related Products</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 py-8 px-4 mt-8">
+                <div class="bg-white hover:shadow-md transition ease-in-out duration-150">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-2.jpg') }}" alt="Product 2" title="Product 2" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 2</a>
+                        </div>
+                        <div class="mt-2 text-blue-500 font-Rubik font-semibold">
+                            &#8377; 10,000.00
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white hover:shadow-md transition ease-in-out duration-150">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-3.jpg') }}" alt="Product 3" title="Product 3" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 3</a>
+                        </div>
+                        <div class="mt-2 text-blue-500 font-Rubik font-semibold">
+                            &#8377; 20,000.00
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white hover:shadow-md transition ease-in-out duration-150">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-4.jpg') }}" alt="Product 4" title="Product 4" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 4</a>
+                        </div>
+                        <div class="mt-2 font-Rubik">
+                            <span class="text-gray-400 line-through">&#8377; 25,000.00</span>
+                            <span class="text-blue-500 font-semibold">&#8377; 18,000.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white hover:shadow-md transition ease-in-out duration-150">
+                    <div>
+                        <img src="{{ asset('/images/products/demo-image-5.jpg') }}" alt="Product 5" title="Product 5" />
+                    </div>
+                    <div class="px-8 py-5 border border-t-0">
+                        <div class="mt-2 text-xs">
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star text-blue-500"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="{{ route('products.show', 'product-1') }}" class="text-gray-900 hover:text-blue-500 font-Rubik font-semibold text-base focus:outline-none focus:text-blue-500 transition ease-in-out duration-150">Product 5</a>
+                        </div>
+                        <div class="mt-2 font-Rubik">
+                            <span class="text-blue-500 font-semibold">&#8377; 18,000.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('pageScripts')
