@@ -27,8 +27,8 @@
 
     @include('partials._footer')
 
-    <div id="backToTop" class="flex items-center justify-center bg-blue-500 rounded w-10 h-10 text-right text-3xl fixed bottom-0 right-0 mr-8 my-8 cursor-pointer goToTop">
-        <i class="fas fa-arrow-up text-white"></i>
+    <div id="backToTop" class="flex items-center justify-center bg-blue-500 rounded w-10 h-10 text-right fixed bottom-0 right-0 mr-8 my-8 cursor-pointer goToTop">
+        <i class="fas fa-chevron-up text-white"></i>
     </div>
 
     <script src="{{ asset('/js/app.js') }}"></script>
