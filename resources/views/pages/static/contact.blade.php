@@ -29,7 +29,7 @@
     <section class="contactUs">
         <div class="container mx-auto">
             <div class="px-4 py-16">
-                <div class="flex flex-col md:flex-row">
+                <div class="flex flex-col md:flex-row gap-6">
                     <div class="w-full md:w-1/2 shadow px-4 py-2">
                         <form action="#" method="POST">
                             @csrf
@@ -60,7 +60,49 @@
                             </div>
                         </form>
                     </div>
-                    <div class="w-full md:w-1/2"></div>
+                    <div class="w-full md:w-1/2 space-y-12">
+                        <div class="py-4 px-4 shadow">
+                            <div class="flex gap-4">
+                                <div class="flex-none w-12 h-12 rounded-full text-2xl bg-blue-500 text-white flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-Rubik font-bold text-lg leading-tight text-gray-500">Address</h2>
+
+                                    <div class="mt-2 font-bold">{{ config('app.name') }}</div>
+                                    <address class="text-gray-500 text-sm">
+                                        4, Station Road, Fort, Mumbai - 400001, India.
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="py-4 px-4 shadow">
+                            <div class="flex gap-4">
+                                <div class="flex-none w-12 h-12 rounded-full text-2xl bg-blue-500 text-white flex items-center justify-center">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-Rubik font-bold text-lg leading-tight text-gray-500">E-Mail Address</h2>
+
+                                    <a href="mailto:support@example.com" class="mt-1 inline-block text-gray-400 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">support@example.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="py-4 px-4 shadow">
+                            <div class="flex gap-4">
+                                <div class="flex-none w-12 h-12 rounded-full text-2xl bg-blue-500 text-white flex items-center justify-center">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-Rubik font-bold text-lg leading-tight text-gray-500">Contact Number</h2>
+
+                                    <a href="tel:+919876543210" class="mt-1 inline-block text-gray-400 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">+91 98765 43210</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
