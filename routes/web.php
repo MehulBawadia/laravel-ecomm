@@ -11,4 +11,6 @@ Route::namespace('Pages')->group(function () {
     Route::get('/product/{name}', 'ProductsController@show')->name('products.show');
 
     Route::get('/cart', 'CartController@index')->name('cart.index');
+
+    Route::get('/order-placed/thank-you', 'OrderPlacedController@success')->name('orderPlaced.success');
 });
