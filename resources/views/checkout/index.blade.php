@@ -164,4 +164,18 @@
             </div>
         </div>
     </section>
+
+    <section class="confirmCart">
+        <div class="container mx-auto">
+            <div class="px-4 py-8">
+                <div class="shadow px-4 py-8">
+                    <h2 class="font-Rubik font-bold text-lg leading-tight mb-3">Confirm Cart</h2>
+
+                    @include('checkout._confirm_cart_table')
+
+                    @include('checkout._confirm_cart_mobile')
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
