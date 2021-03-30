@@ -34,7 +34,7 @@
                 @include('cart._mobile')
 
                 <div class="text-right my-8">
-                    <a href="#" class="bg-blue-500 text-white py-2 px-3 uppercase font-bold tracking-wider focus:outline-none focus:bg-blue-600" title="Proceed To Checkout">Proceed To Checkout</a>
+                    <a href="{{ route('checkout.index') }}" class="bg-blue-500 text-white py-2 px-3 uppercase font-bold tracking-wider focus:outline-none focus:bg-blue-600" title="Proceed To Checkout">Proceed To Checkout</a>
                 </div>
             </div>
         </div>

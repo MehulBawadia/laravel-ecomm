@@ -12,5 +12,7 @@ Route::namespace('Pages')->group(function () {
 
     Route::get('/cart', 'CartController@index')->name('cart.index');
 
+    Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+
     Route::get('/order-placed/thank-you', 'OrderPlacedController@success')->name('orderPlaced.success');
 });
