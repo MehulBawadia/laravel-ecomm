@@ -26,7 +26,7 @@
 
     <section class="addressDetails">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row justify-center px-4 py-16 gap-8">
+            <div class="flex flex-col md:flex-row justify-center px-4 py-8 gap-8">
                 <div class="md:w-1/2 shadow px-4 py-4">
                     <h2 class="font-Rubik font-bold text-lg leading-tight">Billing Address</h2>
 
@@ -137,6 +137,28 @@
                     <div class="my-5">
                         <label for="contact_number" class="text-gray-500">Contact Number:</label>
                         <input type="text" name="contact_number" id="contact_number" class="w-full pl-2 py-2 mt-1 bg-gray-100 focus:bg-white text-gray-900 border rounded shadow focus:outline-none focus:border-blue-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="paymentMethod">
+        <div class="container mx-auto">
+            <div class="px-4 py-8">
+                <div class="shadow px-4 py-4">
+                    <h2 class="font-Rubik font-bold text-lg leading-tight">Select Payment Method</h2>
+
+                    <div class="flex flex-col sm:flex-row gap-4 my-5">
+                        <div>
+                            <input type="radio" name="payment_method" id="payment_method_cod" value="COD">
+                            <label for="payment_method_cod" class="text-gray-500">COD (Cash on Delivery)</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" name="payment_method" id="payment_method_paypal" value="paypal">
+                            <label for="payment_method_paypal" class="text-gray-500">PayPal</label>
+                        </div>
                     </div>
                 </div>
             </div>
