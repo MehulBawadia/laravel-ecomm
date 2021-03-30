@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="mt-2 sm:mt-0 text-gray-400">
-                    Built with <span class="text-blue-500 mx-1"><i class="fas fa-heart"></i></span> using Laravel v{{ app()->version() }} by <a href="https://github.com/MehulBawadia" class="hover:text-gray-900 focus:text-gray-900 focus:outline-none transition ease-in-out duration-150" target="_blank" rel="noopener">Mehul Bawadia</a>
+                    Built with <span class="text-blue-500 mx-1"><i class="fas fa-heart"></i></span> using Laravel v{{ app()->version() }} by <a href="https://github.com/MehulBawadia" class="hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150" target="_blank" rel="noopener">Mehul Bawadia</a>
                 </div>
                 <div class="mt-2 sm:mt-0">
                     <img src="{{ asset('/images/payment.png') }}" alt="Supported Payments" title="Supported Payments" />
