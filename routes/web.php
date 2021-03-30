@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('Admin')->name('admin')->prefix('admin')->group(function () {
     Route::get('/generate', 'GenerateController@index')->name('.generate');
+
+    Route::get('/login', 'LoginController@index')->name('.login');
 });
 
 Route::get('/', 'HomeController@index')->name('homePage');
