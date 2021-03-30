@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('homePage');
+Route::get('/contact', 'StaticPagesController@contact')->name('pages.contact');
+
 Route::namespace('Pages')->group(function () {
     Route::get('/category/{name}', 'CategoriesController@show')->name('categories.show');
 

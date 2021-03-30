@@ -12,7 +12,7 @@
                     <a href="{{ route('categories.show', 'category-1') }}" class="uppercase text-gray-200 hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Category 2">Category 2</a>
                 </li>
                 <li class="font-Rubik font-semibold">
-                    <a href="#" class="uppercase text-gray-200 hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Contact Page">Contact</a>
+                    <a href="{{ route('pages.contact') }}" class="uppercase text-gray-200 hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Contact Page">Contact</a>
                 </li>
             </ul>
         </div>

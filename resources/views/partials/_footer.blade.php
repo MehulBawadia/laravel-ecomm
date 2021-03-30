@@ -26,7 +26,7 @@
                         <li class="text-sm my-3"><a href="#" class="text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Cart</a></li>
                         <li class="text-sm my-3"><a href="#" class="text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Track Your Order</a></li>
                         <li class="text-sm my-3"><a href="#" class="text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Work With Us</a></li>
-                        <li class="text-sm my-3"><a href="#" class="text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Contact Us</a></li>
+                        <li class="text-sm my-3"><a href="{{ route('pages.contact') }}" class="text-gray-600 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150">Contact Us</a></li>
                     </ul>
                 </div>
 
