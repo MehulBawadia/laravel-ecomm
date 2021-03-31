@@ -23,6 +23,8 @@
             @include('admin.partials._navigation')
 
             <div class="w-5/6">
+                @include('admin.partials._header')
+
                 @yield('content')
             </div>
         </div>
@@ -57,6 +59,18 @@
         $(window).on('scroll', function () {
             $('.navigationMenu').addClass('h-auto');
             $('.navigationMenu').removeClass('h-screen');
+        });
+
+        $('.avatarNav').click(function (e) {
+            e.preventDefault();
+
+            var avatarNavList = $('.avatarNavList');
+
+            if (avatarNavList.hasClass('hidden')) {
+                avatarNavList.removeClass('hidden');
+            } else {
+                avatarNavList.addClass('hidden');
+            }
         });
     </script>
     @yield('pageScripts')
