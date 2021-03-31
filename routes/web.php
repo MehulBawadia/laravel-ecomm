@@ -8,6 +8,7 @@ Route::namespace('Admin')->name('admin')->prefix('admin')->group(function () {
     Route::get('/login', 'LoginController@index')->name('.login');
 
     Route::get('/dashboard', 'DashboardController@index')->name('.dashboard');
+    Route::get('/account-settings', 'AccountSettingsController@index')->name('.accountSettings');
 });
 
 Route::get('/', 'HomeController@index')->name('homePage');

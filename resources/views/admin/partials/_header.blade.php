@@ -14,7 +14,7 @@
                     <div class="hidden avatarNavList absolute w-40 right-0 mt-3 rounded bg-gray-100 border shadow">
                         <ul>
                             <li class="my-1">
-                                <a href="#" class="block pl-3 py-1 hover:bg-blue-500 hover:text-white">Account Settings</a>
+                                <a href="{{ route('admin.accountSettings') }}" class="block pl-3 py-1 hover:bg-blue-500 hover:text-white">Account Settings</a>
                             </li>
                             <li><div class="border-b"></div></li>
                             <li class="my-1">
