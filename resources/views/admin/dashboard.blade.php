@@ -154,4 +154,71 @@
             </div>
         </div>
     </section>
+
+    <section class="latestOrders my-12">
+        <div class="container mx-auto">
+            <h2 class="text-xl font-medium tracking-wide mt-8 ml-4">Latest Users</h2>
+
+            <div class="bg-white rounded-md overflow-hidden shadow mx-4 mt-3">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Name</th>
+                            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Username</th>
+                            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">E-Mail</th>
+                            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Status</th>
+                            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Registered On</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-100 text-sm text-gray-600">
+                            <td class="px-5 py-4">Murli Bhai</td>
+                            <td class="px-5 py-4">murliBhaiMBBS</td>
+                            <td class="px-5 py-4">
+                                <a href="mailto:murlibhaimbbs@example.com" class="text-gray-500 hover:text-blue-500 focus:text-blue-800 focus:outline-none transition ease-in-out duration-150" title="Send E-Mail to murlibhaimbbs@example.com">murlibhaimbbs@example.com</a>
+                            </td>
+                            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-green-200 text-green-800"><i class="fas fa-check"></i> Verified</span></td>
+                            <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subDays(2)->format('dS M Y, h:i A') }}</time></td>
+                        </tr>
+                        <tr class="border-b border-gray-100 text-sm text-gray-600">
+                            <td class="px-5 py-4">J. Asthana</td>
+                            <td class="px-5 py-4">jAsthana</td>
+                            <td class="px-5 py-4">
+                                <a href="mailto:j.asthana@example.com" class="text-gray-500 hover:text-blue-500 focus:text-blue-800 focus:outline-none transition ease-in-out duration-150" title="Send E-Mail to j.asthana@example.com">j.asthana@example.com</a>
+                            </td>
+                            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-red-200 text-red-800"><i class="fas fa-times"></i> Non-Verified</span></td>
+                            <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subDays(5)->format('dS M Y, h:i A') }}</time></td>
+                        </tr>
+                        <tr class="border-b border-gray-100 text-sm text-gray-600">
+                            <td class="px-5 py-4">Amisha B.</td>
+                            <td class="px-5 py-4">amishaB</td>
+                            <td class="px-5 py-4">
+                                <a href="mailto:b.amisha@example.com" class="text-gray-500 hover:text-blue-500 focus:text-blue-800 focus:outline-none transition ease-in-out duration-150" title="Send E-Mail to b.amisha@example.com">b.amisha@example.com</a>
+                            </td>
+                            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-red-200 text-red-800"><i class="fas fa-times"></i> Non-Verified</span></td>
+                            <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subDays(7)->format('dS M Y, h:i A') }}</time></td>
+                        </tr>
+                        <tr class="border-b border-gray-100 text-sm text-gray-600">
+                            <td class="px-5 py-4">Sonia S.</td>
+                            <td class="px-5 py-4">soniaS</td>
+                            <td class="px-5 py-4">
+                                <a href="mailto:sonias@example.com" class="text-gray-500 hover:text-blue-500 focus:text-blue-800 focus:outline-none transition ease-in-out duration-150" title="Send E-Mail to sonias@example.com">sonias@example.com</a>
+                            </td>
+                            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-green-200 text-green-800"><i class="fas fa-times"></i> Verified</span></td>
+                            <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subDays(10)->format('dS M Y, h:i A') }}</time></td>
+                        </tr>
+                        <tr class="border-b border-gray-100 text-sm text-gray-600">
+                            <td class="px-5 py-4">Amit K.</td>
+                            <td class="px-5 py-4">kAmit</td>
+                            <td class="px-5 py-4">
+                                <a href="mailto:kamit@example.com" class="text-gray-500 hover:text-blue-500 focus:text-blue-800 focus:outline-none transition ease-in-out duration-150" title="Send E-Mail to kamit@example.com">kamit@example.com</a>
+                            </td>
+                            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-green-200 text-green-800"><i class="fas fa-times"></i> Verified</span></td>
+                            <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subDays(12)->format('dS M Y, h:i A') }}</time></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 @endsection
