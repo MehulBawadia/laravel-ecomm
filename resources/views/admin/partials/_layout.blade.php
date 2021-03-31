@@ -26,10 +26,10 @@
                 @include('admin.partials._header')
 
                 @yield('content')
+
+                @include('admin.partials._footer')
             </div>
         </div>
-
-        {{-- @include('admin.partials._footer') --}}
     {{-- @endauth --}}
 
     {{-- @guest
