@@ -22,7 +22,7 @@
         <div class="flex">
             @include('admin.partials._navigation')
 
-            <div class="w-4/5">
+            <div class="w-5/6">
                 @yield('content')
             </div>
         </div>
