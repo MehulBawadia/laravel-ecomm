@@ -5,7 +5,7 @@
 
     <ul class="mt-5 px-3 space-y-2">
         <li>
-            <a href="/admin/dashboard" class="block bg-blue-600 pl-3 py-2 rounded text-white tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Dashboard"><i class="fas fa-home text-xs"></i> <span class="ml-2">Dashboard</span></a>
+            <a href="{{ route('admin.dashboard') }}" class="block bg-blue-600 pl-3 py-2 rounded text-white tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Dashboard"><i class="fas fa-home text-xs"></i> <span class="ml-2">Dashboard</span></a>
         </li>
         <li>
             <a href="#" class="block bg-transparent pl-3 py-2 rounded text-blue-100 tracking-wide hover:bg-blue-600 hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Categories page"><i class="fas fa-arrows-alt text-xs"></i> <span class="ml-2">Categories</span></a>
