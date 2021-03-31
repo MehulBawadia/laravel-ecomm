@@ -18,21 +18,21 @@
     @yield('pageStyles')
 </head>
 <body class="bg-gray-100 font-Roboto">
-    @auth
-        @include('admin.partials._topHeader')
+    {{-- @auth --}}
+        <div class="flex">
+            @include('admin.partials._navigation')
 
-        @include('admin.partials._logo_and_search')
+            <div class="w-4/5">
+                @yield('content')
+            </div>
+        </div>
 
-        @include('admin.partials._navigation')
+        {{-- @include('admin.partials._footer') --}}
+    {{-- @endauth --}}
 
+    {{-- @guest
         @yield('content')
-
-        @include('admin.partials._footer')
-    @endauth
-
-    @guest
-        @yield('content')
-    @endguest
+    @endguest --}}
 
     <div id="backToTop" class="flex items-center justify-center bg-blue-500 rounded w-10 h-10 text-right fixed bottom-0 right-0 mr-8 my-8 cursor-pointer goToTop">
         <i class="fas fa-chevron-up text-white"></i>
@@ -54,6 +54,10 @@
             }, 800);
         });
 
+        $(window).on('scroll', function () {
+            $('.navigationMenu').addClass('h-auto');
+            $('.navigationMenu').removeClass('h-screen');
+        });
     </script>
     @yield('pageScripts')
 </body>
