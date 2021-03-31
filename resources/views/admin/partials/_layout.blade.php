@@ -72,6 +72,14 @@
                 avatarNavList.addClass('hidden');
             }
         });
+
+        var docHeight    = $(window).height(),
+            footerHeight = $('footer.footer').height(),
+            footerTop    = $('footer.footer').position().top + footerHeight;
+
+        if (footerTop < docHeight) {
+            $('footer.footer').css('margin-top', (docHeight - footerTop) + 'px');
+        }
     </script>
     @yield('pageScripts')
 </body>
