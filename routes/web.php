@@ -9,6 +9,11 @@ Route::namespace('Admin')->name('admin')->prefix('admin')->group(function () {
 
     Route::get('/dashboard', 'DashboardController@index')->name('.dashboard');
     Route::get('/account-settings', 'AccountSettingsController@index')->name('.accountSettings');
+
+    Route::name('.categories')->prefix('categories')->group(function () {
+        Route::get('/', 'CategoriesController@index');
+        Route::get('/{id}/edit', 'CategoriesController@edit')->name('.edit');
+    });
 });
 
 Route::get('/', 'HomeController@index')->name('homePage');

@@ -17,7 +17,7 @@
 
     @yield('pageStyles')
 </head>
-<body class="bg-gray-100 font-Roboto">
+<body class="bg-gray-100 font-Roboto overflow-y-scroll">
     {{-- @auth --}}
         <div class="flex">
             @include('admin.partials._navigation')
