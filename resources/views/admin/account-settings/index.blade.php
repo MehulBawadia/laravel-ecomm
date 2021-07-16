@@ -26,17 +26,17 @@
 
                     <div class="bg-white px-4 py-4">
                         <div>
-                            <label for="full_name" class="text-gray-700">Full Name:</label>
+                            <label for="full_name" class="text-gray-500">Full Name:</label>
                             <input type="text" name="full_name" id="full_name" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="John Doe" />
                         </div>
 
                         <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-5">
                             <div class="w-full">
-                                <label for="username" class="text-gray-700">Username:</label>
+                                <label for="username" class="text-gray-500">Username:</label>
                                 <input type="text" name="username" id="username" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="johnDoe" />
                             </div>
                             <div class="w-full">
-                                <label for="email" class="text-gray-700">E-mail:</label>
+                                <label for="email" class="text-gray-500">E-mail:</label>
                                 <input type="email" name="email" id="email" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="john@example.com" />
                             </div>
                         </div>
@@ -60,17 +60,17 @@
 
                     <div class="bg-white px-4 py-4">
                         <div>
-                            <label for="current_passworde" class="text-gray-700">Current Password:</label>
+                            <label for="current_passworde" class="text-gray-500">Current Password:</label>
                             <input type="password" name="current_passworde" id="current_passworde" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Secret" />
                         </div>
 
                         <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-5">
                             <div class="w-full">
-                                <label for="new_password" class="text-gray-700">New Password:</label>
+                                <label for="new_password" class="text-gray-500">New Password:</label>
                                 <input type="password" name="new_password" id="new_password" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="johnDoe" />
                             </div>
                             <div class="w-full">
-                                <label for="repeat_new_password" class="text-gray-700">Repeat New Password:</label>
+                                <label for="repeat_new_password" class="text-gray-500">Repeat New Password:</label>
                                 <input type="password" name="repeat_new_password" id="repeat_new_password" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Secret" />
                             </div>
                         </div>
