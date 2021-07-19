@@ -14,6 +14,11 @@ Route::namespace('Admin')->name('admin')->prefix('admin')->group(function () {
         Route::get('/', 'CategoriesController@index');
         Route::get('/{id}/edit', 'CategoriesController@edit')->name('.edit');
     });
+
+    Route::name('.tags')->prefix('tags')->group(function () {
+        Route::get('/', 'TagsController@index');
+        Route::get('/{id}/edit', 'TagsController@edit')->name('.edit');
+    });
 });
 
 Route::get('/', 'HomeController@index')->name('homePage');
