@@ -87,9 +87,9 @@
             <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}</time></td>
             <td>
                 <div class="relative">
-                    <button class="btnAction" data-coupon="#coupon-3"><i class="fas fa-ellipsis-v"></i></button>
+                    <button class="btnAction" data-coupon="#coupon-4"><i class="fas fa-ellipsis-v"></i></button>
 
-                    <div class="hidden linksAction absolute top-0 right-6 mt-5 w-24 rounded bg-white border shadow z-50" id="coupon-3">
+                    <div class="hidden linksAction absolute top-0 right-6 mt-5 w-24 rounded bg-white border shadow z-50" id="coupon-4">
                         <ul class="p-0 m-0">
                             <li>
                                 <a href="{{ route('admin.coupons.edit', 1) }}" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Edit</a>
