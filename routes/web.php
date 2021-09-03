@@ -24,6 +24,11 @@ Route::namespace('Admin')->name('admin')->prefix('admin')->group(function () {
         Route::get('/', 'CouponsController@index');
         Route::get('/{id}/edit', 'CouponsController@edit')->name('.edit');
     });
+
+    Route::name('.products')->prefix('products')->group(function () {
+        Route::get('/', 'ProductsController@index');
+        Route::get('/{id}/edit', 'ProductsController@edit')->name('.edit');
+    });
 });
 
 Route::get('/', 'HomeController@index')->name('homePage');
