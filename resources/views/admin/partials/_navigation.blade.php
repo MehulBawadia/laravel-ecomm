@@ -8,16 +8,16 @@
             <a href="{{ route('admin.dashboard') }}" class="block rounded @if (request()->url() === route('admin.dashboard')) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Dashboard"><i class="fas fa-home text-xs"></i> <span class="ml-2">Dashboard</span></a>
         </li>
         <li>
-            <a href="{{ route('admin.categories') }}" class="block rounded @if (Str::contains('categories', request()->url())) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Categories page"><i class="fas fa-arrows-alt text-xs"></i> <span class="ml-2">Categories</span></a>
+            <a href="{{ route('admin.categories') }}" class="block rounded @if (Str::contains(request()->url(), 'categories')) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Categories page"><i class="fas fa-arrows-alt text-xs"></i> <span class="ml-2">Categories</span></a>
         </li>
         <li>
-            <a href="{{ route('admin.tags') }}" class="block rounded @if (Str::contains('tags', request()->url())) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Tags page"><i class="fas fa-tags text-xs"></i> <span class="ml-2">Tags</span></a>
+            <a href="{{ route('admin.tags') }}" class="block rounded @if (Str::contains(request()->url(), 'tags')) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Tags page"><i class="fas fa-tags text-xs"></i> <span class="ml-2">Tags</span></a>
         </li>
         <li>
-            <a href="{{ route('admin.coupons') }}" class="block rounded @if (Str::contains('coupons', request()->url())) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Coupons page"><i class="fas fa-percent text-xs"></i> <span class="ml-2">Coupons</span></a>
+            <a href="{{ route('admin.coupons') }}" class="block rounded @if (Str::contains(request()->url(), 'coupons')) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Coupons page"><i class="fas fa-percent text-xs"></i> <span class="ml-2">Coupons</span></a>
         </li>
         <li>
-            <a href="{{ route('admin.products') }}" class="block rounded @if (Str::contains('products', request()->url())) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Products page"><i class="fas fa-cubes text-xs"></i> <span class="ml-2">Products</span></a>
+            <a href="{{ route('admin.products') }}" class="block rounded @if (Str::contains(request()->url(), 'products')) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Products page"><i class="fas fa-cubes text-xs"></i> <span class="ml-2">Products</span></a>
         </li>
         <li>
             <a href="#" class="block bg-transparent pl-3 py-2 rounded text-blue-100 tracking-wide hover:bg-blue-600 hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Users page"><i class="fas fa-users text-xs"></i> <span class="ml-2">Users</span></a>
