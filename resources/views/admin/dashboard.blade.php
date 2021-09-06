@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="bg-gray-50 pl-7 py-2">
-                        <a href="#" class="text-blue-500 text-sm tracking-wide hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="View All Orders">View All Orders</a>
+                        <a href="{{ route('admin.orders') }}" class="text-blue-500 text-sm tracking-wide hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="View All Orders">View All Orders</a>
                     </div>
                 </div>
                 <div class="w-1/3 bg-white rounded-md shadow overflow-hidden">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="bg-gray-50 pl-7 py-2">
-                        <a href="#" class="text-blue-500 text-sm tracking-wide hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="View All Orders">View All Orders</a>
+                        <a href="{{ route('admin.orders') }}" class="text-blue-500 text-sm tracking-wide hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="View All Orders">View All Orders</a>
                     </div>
                 </div>
                 <div class="w-1/3 bg-white rounded-md shadow overflow-hidden">
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="bg-gray-50 pl-7 py-2">
-                        <a href="#" class="text-blue-500 text-sm tracking-wide hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="View All Users">View All Users</a>
+                        <a href="{{ route('admin.users') }}" class="text-blue-500 text-sm tracking-wide hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="View All Users">View All Users</a>
                     </div>
                 </div>
             </div>
