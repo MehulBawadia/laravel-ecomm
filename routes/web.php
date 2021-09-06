@@ -39,6 +39,10 @@ Route::namespace('Admin')->name('admin')->prefix('admin')->group(function () {
         Route::get('/', 'UsersController@index');
         Route::get('/{id}/edit', 'UsersController@edit')->name('.edit');
     });
+
+    Route::name('.siteSettingsGeneral')->prefix('site-settings-general')->group(function () {
+        Route::get('/', 'SiteSettingsGeneralController@index');
+    });
 });
 
 Route::get('/', 'HomeController@index')->name('homePage');

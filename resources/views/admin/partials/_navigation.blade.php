@@ -32,7 +32,7 @@
             <div class="border border-blue-400"></div>
         </li>
         <li>
-            <a href="#" class="block bg-transparent pl-3 py-2 rounded text-blue-100 tracking-wide hover:bg-blue-600 hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Settings page"><i class="fas fa-cog text-xs"></i> <span class="ml-2">Site Settings</span></a>
+            <a href="{{ route('admin.siteSettingsGeneral') }}" class="block rounded @if (Str::contains(request()->url(), 'site-settings-general')) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Settings page"><i class="fas fa-cog text-xs"></i> <span class="ml-2">Site Settings</span></a>
         </li>
     </ul>
 </div>
