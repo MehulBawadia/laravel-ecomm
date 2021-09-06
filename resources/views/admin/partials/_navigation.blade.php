@@ -20,7 +20,7 @@
             <a href="{{ route('admin.products') }}" class="block rounded @if (Str::contains(request()->url(), 'products')) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Products page"><i class="fas fa-cubes text-xs"></i> <span class="ml-2">Products</span></a>
         </li>
         <li>
-            <a href="#" class="block bg-transparent pl-3 py-2 rounded text-blue-100 tracking-wide hover:bg-blue-600 hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Users page"><i class="fas fa-users text-xs"></i> <span class="ml-2">Users</span></a>
+            <a href="{{ route('admin.users') }}" class="block rounded @if (Str::contains(request()->url(), 'users')) bg-blue-600 text-white @else text-blue-100 hover:bg-blue-600 @endif pl-3 py-2 tracking-wide hover:text-white focus:text-white focus:outline-none transition ease-in-out duration-150" title="Go to Users page"><i class="fas fa-users text-xs"></i> <span class="ml-2">Users</span></a>
         </li>
         <li>
             <div class="border border-blue-400"></div>
