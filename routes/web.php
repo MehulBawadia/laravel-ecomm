@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/admin/generate', 'Admin\GenerateController@index')->name('admin.generate');
 Route::post('/admin/generate', 'Admin\GenerateController@store')->name('admin.generate.store');
 
-Route::middleware('guest')->namespace('Admin')->name('admin')->prefix('admin')->group(function () {
+Route::middleware(['adminExists', 'guest'])->namespace('Admin')->name('admin')->prefix('admin')->group(function () {
     Route::get('/login', 'LoginController@index')->name('.login');
     Route::post('/login', 'LoginController@check')->name('.login.check');
 });

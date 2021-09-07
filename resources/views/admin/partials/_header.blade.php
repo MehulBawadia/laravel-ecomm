@@ -18,7 +18,7 @@
                             </li>
                             <li><div class="border-b"></div></li>
                             <li class="my-1">
-                                <a href="#" class="block pl-3 py-1 hover:bg-blue-500 hover:text-white">Logout</a>
+                                <a href="{{ route('admin.logout') }}" class="block pl-3 py-1 hover:bg-blue-500 hover:text-white">Logout</a>
                             </li>
                         </ul>
                     </div>
