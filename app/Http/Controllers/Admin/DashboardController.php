@@ -15,4 +15,16 @@ class DashboardController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    /**
+     * Logout the administrator.
+     *
+     * @return \Illuuminate\Http\RedirectResponse
+     */
+    public function logout()
+    {
+        auth()->logout();
+
+        return redirect(route('homePage'));
+    }
 }

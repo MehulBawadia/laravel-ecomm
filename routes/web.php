@@ -5,10 +5,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/admin/generate', 'Admin\GenerateController@index')->name('admin.generate');
 Route::post('/admin/generate', 'Admin\GenerateController@store')->name('admin.generate.store');
 
-Route::middleware('adminExists')->namespace('Admin')->name('admin')->prefix('admin')->group(function () {
+Route::middleware('guest')->namespace('Admin')->name('admin')->prefix('admin')->group(function () {
     Route::get('/login', 'LoginController@index')->name('.login');
+    Route::post('/login', 'LoginController@check')->name('.login.check');
+});
 
+Route::get('/home', 'HomeController@redirectToDashboard')->name('home');
+
+Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('admin')->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('.dashboard');
+    Route::get('/logout', 'DashboardController@logout')->name('.logout');
+
     Route::get('/account-settings', 'AccountSettingsController@index')->name('.accountSettings');
 
     Route::name('.categories')->prefix('categories')->group(function () {

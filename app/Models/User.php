@@ -47,4 +47,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the dashboard route for the authenticated user.
+     *
+     * @return string
+     */
+    public function getDashboardRoute()
+    {
+        if (auth()->id() == 1) {
+            return route('admin.dashboard');
+        }
+
+        return route('homePage');
+    }
 }
