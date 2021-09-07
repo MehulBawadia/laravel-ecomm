@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::namespace('Admin')->name('admin')->prefix('admin')->group(function () {
-    Route::get('/generate', 'GenerateController@index')->name('.generate');
+Route::get('/admin/generate', 'Admin\GenerateController@index')->name('admin.generate');
+Route::post('/admin/generate', 'Admin\GenerateController@store')->name('admin.generate.store');
 
+Route::middleware('adminExists')->namespace('Admin')->name('admin')->prefix('admin')->group(function () {
     Route::get('/login', 'LoginController@index')->name('.login');
 
     Route::get('/dashboard', 'DashboardController@index')->name('.dashboard');
@@ -45,19 +46,21 @@ Route::namespace('Admin')->name('admin')->prefix('admin')->group(function () {
     });
 });
 
-Route::get('/', 'HomeController@index')->name('homePage');
-Route::get('/contact', 'StaticPagesController@contact')->name('pages.contact');
+Route::middleware('adminExists')->group(function () {
+    Route::get('/', 'HomeController@index')->name('homePage');
+    Route::get('/contact', 'StaticPagesController@contact')->name('pages.contact');
 
-Route::namespace('Pages')->group(function () {
-    Route::get('/category/{name}', 'CategoriesController@show')->name('categories.show');
+    Route::namespace('Pages')->group(function () {
+        Route::get('/category/{name}', 'CategoriesController@show')->name('categories.show');
 
-    Route::get('/tag/{name}', 'TagsController@show')->name('tags.show');
+        Route::get('/tag/{name}', 'TagsController@show')->name('tags.show');
 
-    Route::get('/product/{name}', 'ProductsController@show')->name('products.show');
+        Route::get('/product/{name}', 'ProductsController@show')->name('products.show');
 
-    Route::get('/cart', 'CartController@index')->name('cart.index');
+        Route::get('/cart', 'CartController@index')->name('cart.index');
 
-    Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+        Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 
-    Route::get('/order-placed/thank-you', 'OrderPlacedController@success')->name('orderPlaced.success');
+        Route::get('/order-placed/thank-you', 'OrderPlacedController@success')->name('orderPlaced.success');
+    });
 });

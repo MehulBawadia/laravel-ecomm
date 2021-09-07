@@ -12,13 +12,15 @@
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Rubik:wght@400;600;700&family=Roboto:wght@400;500;700&&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" />
 
     @yield('pageStyles')
 </head>
 <body class="bg-gray-150 font-Roboto overflow-y-scroll tracking-wider">
-    {{-- @auth --}}
+    @auth
         <div class="flex">
             @include('admin.partials._navigation')
 
@@ -30,17 +32,35 @@
                 @include('admin.partials._footer')
             </div>
         </div>
-    {{-- @endauth --}}
+    @endauth
 
-    {{-- @guest
+    @guest
         @yield('content')
-    @endguest --}}
+    @endguest
 
     <div id="backToTop" class="flex items-center justify-center bg-blue-500 rounded w-10 h-10 text-right fixed bottom-0 right-0 mr-8 my-8 cursor-pointer goToTop">
         <i class="fas fa-chevron-up text-white"></i>
     </div>
 
     <script src="{{ asset('/js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+
+    <script>
+        function jsNotify(type, message, title = "Success !")
+        {
+            iziToast.show({
+                message: message ?? "Message not found",
+                title: title,
+                position: 'topRight',
+                theme: 'light',
+                color: type == 'success' ? 'green' : 'red',
+                timeout: 2500,
+                icon: type == 'success' ? 'fas fa-check' : 'fas fa-times'
+            });
+        }
+    </script>
+
+    @auth
     <script>
         $('#backToTop').hide();
         $(window).scroll(function () {
@@ -81,6 +101,7 @@
             $('footer.footer').css('margin-top', (docHeight - footerTop) + 'px');
         }
     </script>
+    @endauth
     @yield('pageScripts')
 </body>
 </html>
