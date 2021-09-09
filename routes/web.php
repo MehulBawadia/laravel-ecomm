@@ -52,7 +52,7 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
         Route::get('/', 'SiteSettingsGeneralController@index');
         Route::patch('/address', 'SiteSettingsGeneralController@updateAddressInfo')->name('.updateAddressInfo');
         Route::patch('/contact', 'SiteSettingsGeneralController@updateContactInfo')->name('.updateContactInfo');
-        Route::patch('/email', 'SiteSettingsGeneralController@updateEmailInfo')->name('.updateEmailInfo');
+        Route::patch('/order-email', 'SiteSettingsGeneralController@updateOrderEmailInfo')->name('.updateOrderEmailInfo');
     });
 });
 

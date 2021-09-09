@@ -26,8 +26,9 @@ class SiteSettingsGeneralController extends Controller
 
         $address = json_decode($setting->address_info, true) ?? [];
         $contact = json_decode($setting->contact_info, true) ?? [];
+        $orderEmail = json_decode($setting->email_info, true) ?? [];
 
-        return view('admin.site-settings.general', compact('address', 'contact'));
+        return view('admin.site-settings.general', compact('address', 'contact', 'orderEmail'));
     }
 
     /**
@@ -88,6 +89,34 @@ class SiteSettingsGeneralController extends Controller
             'status' => 'success',
             'title' => 'Success !',
             'message' => 'Contact information updated successfully.',
+        ]);
+    }
+
+    /**
+     * Update the order email info.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updateOrderEmailInfo(Request $request)
+    {
+        $this->validate($request, [
+            'from_email' => 'required|email:filter',
+            'from_name' => 'required|max:255',
+            'order_notification_email' => 'required',
+        ]);
+
+        $setting = SiteSetting::first();
+        if (! $setting) {
+            SiteSetting::create(['email_info' => json_encode($request->except(['_token', '_method']))]);
+        } else {
+            $setting->update(['email_info' => json_encode($request->except(['_token', '_method']))]);
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'title' => 'Success !',
+            'message' => 'Order E-Mail information updated successfully.',
         ]);
     }
 }

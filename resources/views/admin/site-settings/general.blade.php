@@ -131,36 +131,40 @@
         </div>
     </section>
 
-    <section class="emailInformation my-16">
+    <section class="orderEmailInformation my-16">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">E-Mail Information</h2>
+            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">Order E-Mail Information</h2>
 
             <div class="w-2/3 mx-auto mt-3 bg-gray-50 rounded shadow overflow-hidden">
-                <form action="#" method="POST" id="formEmailInformation">
+                <form action="{{ route('admin.siteSettingsGeneral.updateOrderEmailInfo') }}" method="POST" id="formOrderEmailInformation">
                     @csrf
+                    @method("PATCH")
 
                     <div class="bg-white px-4 py-4">
                         <div class="flex flex-col md:flex-row justify-center gap-4">
                             <div class="w-full">
                                 <label for="from_email" class="text-gray-500">From E-Mail:</label>
-                                <input type="email" name="from_email" id="from_email" value="no-reply@example.com" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="no-reply@example.com" />
+                                <input type="email" name="from_email" id="from_email" value="{{ $orderEmail['from_email'] ?? '' }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="no-reply@example.com" />
+                                <span data-name="from_email"></span>
                             </div>
                             <div class="w-full">
                                 <label for="from_name" class="text-gray-500">From Name:</label>
-                                <input type="email" name="from_name" id="from_name" value="{{ config('app.name') }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="{{ config('app.name') }}" />
+                                <input type="text" name="from_name" id="from_name" value="{{ $orderEmail['from_name'] ?? '' }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="{{ config('app.name') }}" />
+                                <span data-name="from_name"></span>
                             </div>
                         </div>
 
                         <div class="flex flex-col md:flex-row items-center gap-4 mt-5">
                             <div class="w-1/2">
-                                <label for="order_notification_email" class="text-gray-500">Order Notification E-Mail:</label>
-                                <input type="text" name="order_notification_email" id="order_notification_email" value="johndoe@example.com,adminorders@example.com" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="johndoe@example.com,adminorders@example.com" />
+                                <label for="order_notification_email" class="text-gray-500">Order Notification E-Mails <small>(Comma separated)</small>:</label>
+                                <input type="text" name="order_notification_email" id="order_notification_email" value="{{ $orderEmail['order_notification_email'] ?? '' }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="johndoe@example.com,adminorders@example.com" />
+                                <span data-name="order_notification_email"></span>
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-gray-50 px-4 py-4">
-                        <button type="submit" class="bg-blue-500 text-gray-50 py-2 px-3 rounded focus:outline-none focus:bg-blue-600 tracking-wider font-medium">Update</button>
+                        <button type="submit" class="bg-blue-500 text-gray-50 py-2 px-3 rounded focus:outline-none focus:bg-blue-600 tracking-wider font-medium btnUpdateOrderEmailInfo">Update</button>
 
                         <a href="{{ route('admin.dashboard') }}" class="ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider">Cancel</a>
                     </div>
@@ -221,6 +225,50 @@
 
             var self = $(this)
                 form = $('#formContactInformation');
+
+            form.find('span').removeClass('text-red-500 text-sm').html('');
+            form.find('input').removeClass('border-red-500');
+
+            self.addClass('opacity-50 cursor-not-allowed')
+                .html('<i class="fa fa-spinner fa-spin"></i> Updating...');
+
+            $.ajax({
+                url: form.attr('action'),
+                type: 'POST',
+                data: form.serialize(),
+                success: function (res) {
+                    self.removeClass('opacity-50 cursor-not-allowed').html('Update');
+
+                    jsNotify(res.status, res.message, res.title);
+                },
+                error: function (err) {
+                    self.removeClass('opacity-50 cursor-not-allowed').html('Update');
+
+                    var errors = null;
+
+                    if (err.status == 422) {
+                        errors = err.responseJSON.errors;
+                    }
+
+                    if (errors != null) {
+                        $.each(errors, function (index, value) {
+                            $('input[id="'+index+'"]').first().addClass('border-red-500');
+                            $('span[data-name="'+index+'"]').first().addClass('text-xs text-red-500').html('<i class="fas fa-times-circle"></i> ' + value);
+                        });
+                    } else {
+                        alert('Something went wrong!');
+                    }
+                }
+            });
+
+            return false;
+        });
+
+        $('.btnUpdateOrderEmailInfo').click(function (e) {
+            e.preventDefault();
+
+            var self = $(this)
+                form = $('#formOrderEmailInformation');
 
             form.find('span').removeClass('text-red-500 text-sm').html('');
             form.find('input').removeClass('border-red-500');
