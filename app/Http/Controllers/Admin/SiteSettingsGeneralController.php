@@ -25,8 +25,9 @@ class SiteSettingsGeneralController extends Controller
         }
 
         $address = json_decode($setting->address_info, true) ?? [];
+        $contact = json_decode($setting->contact_info, true) ?? [];
 
-        return view('admin.site-settings.general', compact('address'));
+        return view('admin.site-settings.general', compact('address', 'contact'));
     }
 
     /**
@@ -59,6 +60,34 @@ class SiteSettingsGeneralController extends Controller
             'status' => 'success',
             'title' => 'Success !',
             'message' => 'Address information updated successfully.',
+        ]);
+    }
+
+    /**
+     * Update the contact info.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updateContactInfo(Request $request)
+    {
+        $this->validate($request, [
+            'support_email' => 'required|email:filter',
+            'contact_number' => 'required|max:255',
+            'fax_number' => 'nullable|max:255',
+        ]);
+
+        $setting = SiteSetting::first();
+        if (! $setting) {
+            SiteSetting::create(['contact_info' => json_encode($request->except(['_token', '_method']))]);
+        } else {
+            $setting->update(['contact_info' => json_encode($request->except(['_token', '_method']))]);
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'title' => 'Success !',
+            'message' => 'Contact information updated successfully.',
         ]);
     }
 }
