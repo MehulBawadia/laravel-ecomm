@@ -18,9 +18,9 @@
 @section('content')
     <section class="personalInformation">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">Address Information</h2>
+            <h2 class="text-xl font-medium tracking-wide mt-8">Address Information</h2>
 
-            <div class="w-2/3 mx-auto mt-3 bg-gray-50 rounded shadow overflow-hidden">
+            <div class="mt-3 bg-gray-50 rounded shadow overflow-hidden">
                 <form action="{{ route('admin.siteSettingsGeneral.updateAddressInfo') }}" method="POST" id="formAddressInformation">
                     @csrf
                     @method('PATCH')
@@ -91,9 +91,9 @@
 
     <section class="contactInformation my-16">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">Contact Information</h2>
+            <h2 class="text-xl font-medium tracking-wide mt-8 mx-auto">Contact Information</h2>
 
-            <div class="w-2/3 mx-auto mt-3 bg-gray-50 rounded shadow overflow-hidden">
+            <div class="mt-3 bg-gray-50 rounded shadow overflow-hidden">
                 <form action="{{ route('admin.siteSettingsGeneral.updateContactInfo') }}" method="POST" id="formContactInformation">
                     @csrf
                     @method('PATCH')
@@ -133,9 +133,9 @@
 
     <section class="orderEmailInformation my-16">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">Order E-Mail Information</h2>
+            <h2 class="text-xl font-medium tracking-wide mt-8">Order E-Mail Information</h2>
 
-            <div class="w-2/3 mx-auto mt-3 bg-gray-50 rounded shadow overflow-hidden">
+            <div class="mt-3 bg-gray-50 rounded shadow overflow-hidden">
                 <form action="{{ route('admin.siteSettingsGeneral.updateOrderEmailInfo') }}" method="POST" id="formOrderEmailInformation">
                     @csrf
                     @method("PATCH")
