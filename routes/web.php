@@ -50,6 +50,9 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
 
     Route::name('.siteSettingsGeneral')->prefix('site-settings-general')->group(function () {
         Route::get('/', 'SiteSettingsGeneralController@index');
+        Route::patch('/address', 'SiteSettingsGeneralController@updateAddressInfo')->name('.updateAddressInfo');
+        Route::patch('/contact', 'SiteSettingsGeneralController@updateContactInfo')->name('.updateContactInfo');
+        Route::patch('/email', 'SiteSettingsGeneralController@updateEmailInfo')->name('.updateEmailInfo');
     });
 });
 
