@@ -24,7 +24,7 @@
         <div class="flex">
             @include('admin.partials._navigation')
 
-            <div class="w-5/6">
+            <div class="w-full sm:w-5/6">
                 @include('admin.partials._header')
 
                 @yield('content')
@@ -32,6 +32,8 @@
                 @include('admin.partials._footer')
             </div>
         </div>
+
+        @include('admin.partials._mobile_nav')
     @endauth
 
     @guest
@@ -91,6 +93,21 @@
             } else {
                 avatarNavList.addClass('hidden');
             }
+        });
+
+        $('body').on('click', '.bottomNav', function (e) {
+            e.preventDefault();
+
+            var isOpen = $('.adminBottomNav').hasClass('hidden');
+            if (isOpen == false) {
+                $('.adminBottomNav').addClass('hidden');
+                $(this).html('<i class="fa fa-bars"></i>');
+            } else {
+                $('.adminBottomNav').removeClass('hidden');
+                $(this).html('<i class="fa fa-times"></i>');
+            }
+
+            return false;
         });
 
         var docHeight    = $(window).height(),
