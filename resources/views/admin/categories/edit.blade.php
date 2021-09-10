@@ -7,9 +7,9 @@
 @section('pageTitle')
     <div class="flex items-end">
         <ul class="flex text-sm gap-2">
-            <li><a href="{{ route('admin.dashboard') }}" class="text-blue-500 hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="Go to Dashboard Page">Dashboard</a></li>
+            <li><a href="{{ route('admin.dashboard') }}" class="text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150" title="Go to Dashboard Page">Dashboard</a></li>
             <li>/</li>
-            <li><a href="{{ route('admin.categories') }}" class="text-blue-500 hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="Go to Dashboard Page">Categories</a></li>
+            <li><a href="{{ route('admin.categories') }}" class="text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150" title="Go to Dashboard Page">Categories</a></li>
             <li>/</li>
         </ul>
 
@@ -18,17 +18,17 @@
 @endsection
 
 @section('content')
-    <section class="generalInformation">
+    <section class="generalInformation px-10 mt-8 pt-16">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">General Information</h2>
+            <h2 class="text-xl font-medium tracking-wide">General Information</h2>
 
             @include('admin.categories._general_info')
         </div>
     </section>
 
-    <section class="seoSection my-16">
+    <section class="seoSection px-10 my-16">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">SEO Details</h2>
+            <h2 class="text-xl font-medium tracking-wide">SEO Details</h2>
 
             @include('admin.categories._seo_details')
         </div>

@@ -7,7 +7,7 @@
 @section('pageTitle')
     <div class="flex items-end">
         <ul class="flex text-sm gap-2">
-            <li><a href="{{ route('admin.dashboard') }}" class="text-blue-500 hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="Go to Dashboard Page">Dashboard</a></li>
+            <li><a href="{{ route('admin.dashboard') }}" class="text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150" title="Go to Dashboard Page">Dashboard</a></li>
             <li>/</li>
         </ul>
 
@@ -16,19 +16,19 @@
 @endsection
 
 @section('content')
-    <section class="latestOrders my-12">
+    <section class="latestOrders mt-8 pt-16">
         <div class="container mx-auto">
             <div class="flex justify-between items-center mx-4">
                 <h2 class="text-xl font-medium tracking-wide">All Categories</h2>
 
                 <div>
-                    <button class="linkAddNewCategory bg-blue-500 text-sm text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-blue-600 focus:bg-blue-600 tracking-wider font-medium"><i class="fas fa-plus text-xs"></i> Add New</button>
+                    <button class="linkAddNewCategory bg-indigo-500 text-sm text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium"><i class="fas fa-plus text-xs"></i> Add New</button>
                 </div>
             </div>
 
             @include('admin.categories._create')
 
-            <div class="bg-white rounded-md shadow mx-4 mt-3">
+            <div class="bg-white rounded-md shadow mx-4 mt-3 overflow-x-auto">
                 @include('admin.categories._table')
             </div>
         </div>
