@@ -1,4 +1,4 @@
-<div class="hidden sm:block sm:w-1/6 h-screen bg-white border-r navigationMenu">
+<div class="hidden md:block md:w-1/4 lg:w-1/6 h-screen bg-white border-r navigationMenu">
     <div class="pt-5 text-center">
         <a href="{{ route('homePage') }}" class="text-2xl font-bold text-gray-800 tracking-wide hover:text-indigo-600 focus:text-indigo-600 focus:outline-none transition ease-in-out duration-150" target="_blank" title="Go to Home Page"><span class="text-2xl"><i class="fas fa-shopping-cart"></i></span> {{ config('app.name') }}</a>
     </div>

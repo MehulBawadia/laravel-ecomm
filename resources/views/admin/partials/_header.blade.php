@@ -1,13 +1,13 @@
-<section class="pageHeader bg-white shadow fixed w-full sm:w-5/6">
+<section class="pageHeader bg-white shadow fixed w-full md:w-3/4 lg:w-5/6">
     <div class="container mx-auto">
         <div class="flex justify-between items-center px-4 py-4">
             @yield('pageTitle')
 
-            <a href="#" class="block sm:hidden text-2xl bottomNav">
+            <a href="#" class="block md:hidden text-2xl bottomNav">
                 <i class="fas fa-bars"></i>
             </a>
 
-            <div class="hidden sm:flex items-center">
+            <div class="hidden md:flex items-center">
                 <div class="flex-none">
                     <img src="{{ asset('/images/user-default.jpg') }}" alt="Administrator" title="Administrator" class="rounded-full w-8 h-8" />
                 </div>

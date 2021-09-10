@@ -1,4 +1,4 @@
-<div class="sm:hidden space-y-8">
+<div class="md:hidden space-y-8">
     <div class="cartItem border px-5 py-3 bg-white rounded shadow">
         <img src="{{ asset('/images/products/demo-image-1.jpg') }}" alt="Product 1" title="Product 1" class="mx-auto w-32 rounded shadow" />
 

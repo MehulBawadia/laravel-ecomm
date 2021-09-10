@@ -24,7 +24,7 @@
         <div class="flex">
             @include('admin.partials._navigation')
 
-            <div class="w-full sm:w-5/6">
+            <div class="w-full md:w-3/4 lg:w-5/6">
                 @include('admin.partials._header')
 
                 @yield('content')
