@@ -11,58 +11,64 @@
 @endsection
 
 @section('content')
-    <section class="dashboard">
+    <section class="dashboard pt-16">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide mt-8 ml-4">Overview</h2>
 
-            <div class="flex justify-between items-center px-4 mt-3 gap-6">
-                <div class="w-1/3 bg-white rounded-md shadow overflow-hidden">
-                    <div class="flex items-center px-4 py-8">
-                        <div class="mx-3 text-gray-400 text-xl">
-                            <i class="fas fa-rupee-sign"></i>
+            <div class="flex flex-wrap items-center px-4 mt-3 -mx-3">
+                <div class="w-full sm:w-1/2 lg:w-1/3 px-3 pb-6">
+                    <div class="bg-white rounded-xl overflow-hidden shadow">
+                        <div class="flex items-center px-4 py-6">
+                            <div class="bg-indigo-500 text-white mx-3 h-full text-2xl px-4 py-2 rounded">
+                                <i class="fas fa-rupee-sign"></i>
+                            </div>
+                            <div class="ml-1">
+                                <h3 class="text-gray-500">Amount Received</h3>
+                                <div class="text-gray-800 font-bold text-xl">10,50,040.00</div>
+                            </div>
                         </div>
-                        <div class="ml-5">
-                            <h3 class="text-gray-500">Amount Received</h3>
-                            <div class="text-gray-800 text-xl mt-1">&#8377; 10,50,040.00</div>
+                        <div class="bg-gray-50 pl-7 py-2">
+                            <a href="{{ route('admin.orders') }}" class="text-indigo-600 text-sm tracking-wide hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150" title="View All Orders">View All Orders</a>
                         </div>
-                    </div>
-                    <div class="bg-gray-50 pl-7 py-2">
-                        <a href="{{ route('admin.orders') }}" class="text-blue-500 text-sm tracking-wide hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="View All Orders">View All Orders</a>
                     </div>
                 </div>
-                <div class="w-1/3 bg-white rounded-md shadow overflow-hidden">
-                    <div class="flex items-center px-4 py-8">
-                        <div class="mx-3 text-gray-400 text-xl">
-                            <i class="fas fa-shopping-cart"></i>
+                <div class="w-full sm:w-1/2 lg:w-1/3 px-3 pb-6">
+                    <div class="bg-white rounded-xl overflow-hidden shadow">
+                        <div class="flex items-center px-4 py-6">
+                            <div class="bg-indigo-500 text-white mx-3 h-full text-2xl px-3 py-2 rounded">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="ml-1">
+                                <h3 class="text-gray-500">Orders Collected</h3>
+                                <div class="text-gray-800 font-bold text-xl">15,250</div>
+                            </div>
                         </div>
-                        <div class="ml-5">
-                            <h3 class="text-gray-500">Orders Placed</h3>
-                            <div class="text-gray-800 text-xl mt-1">15,248</div>
+                        <div class="bg-gray-50 pl-7 py-2">
+                            <a href="{{ route('admin.orders') }}" class="text-indigo-600 text-sm tracking-wide hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150" title="View All Orders">View All Orders</a>
                         </div>
-                    </div>
-                    <div class="bg-gray-50 pl-7 py-2">
-                        <a href="{{ route('admin.orders') }}" class="text-blue-500 text-sm tracking-wide hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="View All Orders">View All Orders</a>
                     </div>
                 </div>
-                <div class="w-1/3 bg-white rounded-md shadow overflow-hidden">
-                    <div class="flex items-center px-4 py-8">
-                        <div class="mx-3 text-gray-400 text-xl">
-                            <i class="fas fa-users"></i>
+                <div class="w-full sm:w-1/2 lg:w-1/3 px-3 pb-6">
+                    <div class="bg-white rounded-xl overflow-hidden shadow">
+                        <div class="flex items-center px-4 py-6">
+                            <div class="bg-indigo-500 text-white mx-3 h-full text-2xl px-3 py-2 rounded">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="ml-1">
+                                <h3 class="text-gray-500">Users Registered</h3>
+                                <div class="text-gray-800 font-bold text-xl">245</div>
+                            </div>
                         </div>
-                        <div class="ml-5">
-                            <h3 class="text-gray-500">Users Registered</h3>
-                            <div class="text-gray-800 text-xl mt-1">245</div>
+                        <div class="bg-gray-50 pl-7 py-2">
+                            <a href="{{ route('admin.users') }}" class="text-indigo-600 text-sm tracking-wide hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150" title="View All Users">View All Users</a>
                         </div>
-                    </div>
-                    <div class="bg-gray-50 pl-7 py-2">
-                        <a href="{{ route('admin.users') }}" class="text-blue-500 text-sm tracking-wide hover:text-blue-600 focus:text-blue-600 focus:outline-none transition ease-in-out duration-150" title="View All Users">View All Users</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="latestOrders my-12">
+    <section class="latestOrders mb-12">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide mt-8 ml-4">Latest Orders</h2>
 
