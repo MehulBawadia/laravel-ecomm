@@ -20,7 +20,13 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
 
     Route::name('.categories')->prefix('categories')->group(function () {
         Route::get('/', 'CategoriesController@index');
+        Route::post('/', 'CategoriesController@store')->name('.store');
         Route::get('/{id}/edit', 'CategoriesController@edit')->name('.edit');
+        Route::patch('/{id}', 'CategoriesController@update')->name('.update');
+        Route::patch('/{id}/seo', 'CategoriesController@updateSeo')->name('.updateSeo');
+        Route::delete('/{id}/delete', 'CategoriesController@delete')->name('.delete');
+        Route::patch('/{id}/restore', 'CategoriesController@restore')->name('.restore');
+        Route::delete('/{id}/destroy', 'CategoriesController@destroy')->name('.destroy');
     });
 
     Route::name('.tags')->prefix('tags')->group(function () {

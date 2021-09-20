@@ -9,38 +9,51 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="border-b border-gray-100 text-sm text-gray-600">
-            <td class="px-5 py-4 text-left">#{{ mt_rand(1, 99999) }}</td>
-            <td class="px-5 py-4 text-left">Category 1</td>
-            <td class="px-5 py-4 text-left text-yellow-500"><i class="fas fa-file"></i> Draft</td>
-            <td class="px-5 py-4 text-left hidden lg:table-cell"><time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}</time></td>
-            <td>
-                <a href="{{ route('admin.categories.edit', 1) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
+        @forelse ($categories as $category)
+            <tr class="border-b border-gray-100 text-sm text-gray-600">
+                <td class="px-5 py-4 text-left">{{ ++$loop->index }}</td>
+                <td class="px-5 py-4 text-left">{{ $category->name }}</td>
+                <td class="px-5 py-4 text-left">
+                    @if ($category->deleted_at == null && $category->status == \App\Models\Category::DRAFT)
+                        <span class="text-yellow-500"><i class="fas fa-file"></i> Draft</span>
+                    @elseif ($category->deleted_at == null && $category->status == \App\Models\Category::PUBLISHED)
+                        <span class="text-green-800"><i class="fas fa-check"></i> Published</span>
+                    @elseif ($category->deleted_at != null && $category->deleted_at != null)
+                        <span class="text-red-800"><i class="fas fa-times"></i> Temporarily Deleted</span>
+                    @endif
+                </td>
+                <td class="px-5 py-4 text-left hidden lg:table-cell"><time datetime="{{ $category->updated_at->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ $category->updated_at->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}</time></td>
+                <td class="flex items-center py-3.5">
+                    <a href="{{ route('admin.categories.edit', 1) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
 
-                <a href="#" class="block sm:inline mt-2 sm:mt-0 sm:ml-3 text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Delete</a>
-            </td>
-        </tr>
-        <tr class="border-b border-gray-100 text-sm text-gray-600">
-            <td class="px-5 py-4 text-left">#{{ mt_rand(1, 99999) }}</td>
-            <td class="px-5 py-4 text-left">Category 2</td>
-            <td class="px-5 py-4 text-left text-green-800"><i class="fas fa-check"></i> Published</td>
-            <td class="px-5 py-4 text-left hidden lg:table-cell"><time datetime="{{ now()->timezone('Asia/Kolkata')->subMinutes(30)->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subMinutes(30)->format('dS M Y, h:i A') }}</time></td>
-            <td>
-                <a href="{{ route('admin.categories.edit', 1) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
+                    @if ($category->deleted_at == null)
+                        <form method="POST" action="{{ route('admin.categories.delete', $category->id) }}" id="formDeleteCategory-{{ $category->id }}">
+                            @csrf
+                            @method('DELETE')
 
-                <a href="#" class="block sm:inline mt-2 sm:mt-0 sm:ml-3 text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Delete</a>
-            </td>
-        </tr>
-        <tr class="border-b border-gray-100 text-sm text-gray-600">
-            <td class="px-5 py-4 text-left">#{{ mt_rand(1, 99999) }}</td>
-            <td class="px-5 py-4 text-left">Category 3</td>
-            <td class="px-5 py-4 text-left text-red-800"><i class="fas fa-times"></i> Temporarily Deleted</td>
-            <td class="px-5 py-4 text-left hidden lg:table-cell"><time datetime="{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}</time></td>
-            <td>
-                <a href="{{ route('admin.categories.edit', 1) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
+                            <button class="block sm:inline ml-3 text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150 pr-5 btnDeleteActions" data-actionform="#formDeleteCategory-{{ $category->id }}" data-action="temp-delete">Delete</button>
+                        </form>
+                    @else
+                        <form method="POST" action="{{ route('admin.categories.restore', $category->id) }}" id="formRestoreCategory-{{ $category->id }}">
+                            @csrf
+                            @method('PATCH')
 
-                <a href="#" class="block sm:inline mt-2 sm:mt-0 sm:ml-3 text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Delete</a>
-            </td>
-        </tr>
+                            <button class="block sm:inline ml-3 text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150 btnDeleteActions" data-actionform="#formRestoreCategory-{{ $category->id }}" data-action="restore">Restore</button>
+                        </form>
+
+                        <form action="{{ route('admin.categories.destroy', $category->id) }}" id="formDestroyCategory-{{ $category->id }}">
+                            @csrf
+                            @method('DELETE')
+
+                            <button class="block sm:inline mt-0 ml-3 text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150 pr-5 btnDeleteActions" data-actionform="#formDestroyCategory-{{ $category->id }}" data-action="destroy">Destroy</button>
+                        </form>
+                    @endif
+                </td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="5" class="text-center text-gray-600 py-2 text-sm">No records found</td>
+            </tr>
+        @endforelse
     </tbody>
 </table>
