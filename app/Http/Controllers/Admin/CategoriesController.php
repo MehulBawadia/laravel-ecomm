@@ -122,7 +122,6 @@ class CategoriesController extends Controller
             ], 404);
         }
 
-        $request['slug'] = \Illuminate\Support\Str::slug($request->name);
         $category->update($request->all());
 
         return response()->json([
