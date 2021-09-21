@@ -2,105 +2,52 @@
     <thead>
         <tr class="bg-gray-50">
             <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Sr. No.</th>
+            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Code</th>
             <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Name</th>
-            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Status</th>
-            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Expires At</th>
-            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Last Updated At</th>
-            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left"></th>
+            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left">Type</th>
+            <th class="py-2 pl-5 uppercase font-normal text-gray-500 text-sm text-left hidden lg:table-cell">Last Updated At</th>
+            <th class="py-2 pr-5 sm:pr-0 uppercase font-normal text-gray-500 text-sm text-left">Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr class="border-b border-gray-100 text-sm text-gray-600">
-            <td class="px-5 py-4 text-left">#{{ mt_rand(1, 99999) }}</td>
-            <td class="px-5 py-4 text-left">Coupon 1</td>
-            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-yellow-200 text-yellow-800"><i class="fas fa-file"></i> Draft</span></td>
-            <td class="px-5 py-4 text-left">--</td>
-            <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}</time></td>
-            <td>
-                <div class="relative">
-                    <button class="btnAction" data-coupon="#coupon-1"><i class="fas fa-ellipsis-v"></i></button>
+        @forelse ($coupons as $coupon)
+            <tr class="border-b border-gray-100 text-sm text-gray-600">
+                <td class="px-5 py-4 text-left">{{ ++$loop->index }}</td>
+                <td class="px-5 py-4 text-left">{{ $coupon->code }}</td>
+                <td class="px-5 py-4 text-left">{{ $coupon->name }}</td>
+                <td class="px-5 py-4 text-left">{{ $coupon->type }}</td>
+                <td class="px-5 py-4 text-left hidden lg:table-cell"><time datetime="{{ $coupon->updated_at->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ $coupon->updated_at->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}</time></td>
+                <td class="flex items-center py-3.5">
+                    <a href="{{ route('admin.coupons.edit', 1) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
 
-                    <div class="hidden linksAction absolute top-0 right-6 mt-5 w-24 rounded bg-white border shadow z-50" id="coupon-1">
-                        <ul class="p-0 m-0">
-                            <li>
-                                <a href="{{ route('admin.coupons.edit', 1) }}" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Edit</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Delete</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr class="border-b border-gray-100 text-sm text-gray-600">
-            <td class="px-5 py-4 text-left">#{{ mt_rand(1, 99999) }}</td>
-            <td class="px-5 py-4 text-left">Coupon 2</td>
-            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-green-200 text-green-800"><i class="fas fa-check"></i> Published</span></td>
-            <td class="px-5 py-4 text-left"><time datetime="{{ today()->addDays(10)->format('dS M Y, h:i A') }}">{{ today()->addDays(10)->endOfDay()->format('dS M Y, h:i A') }}</time></td>
-            <td class="px-5 py-4 text-left"><time datetime="{{ today()->timezone('Asia/Kolkata')->subMinutes(30)->format('dS M Y, h:i A') }}">{{ today()->timezone('Asia/Kolkata')->subMinutes(30)->format('dS M Y, h:i A') }}</time></td>
-            <td>
-                <div class="relative">
-                    <button class="btnAction" data-coupon="#coupon-2"><i class="fas fa-ellipsis-v"></i></button>
+                    @if ($coupon->deleted_at == null)
+                        <form method="POST" action="{{ route('admin.coupons.delete', $coupon->id) }}" id="formDeleteCoupon-{{ $coupon->id }}">
+                            @csrf
+                            @method('DELETE')
 
-                    <div class="hidden linksAction absolute top-0 right-6 mt-5 w-24 rounded bg-white border shadow z-50" id="coupon-2">
-                        <ul class="p-0 m-0">
-                            <li>
-                                <a href="{{ route('admin.coupons.edit', 1) }}" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Edit</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Delete</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr class="border-b border-gray-100 text-sm text-gray-600">
-            <td class="px-5 py-4 text-left">#{{ mt_rand(1, 99999) }}</td>
-            <td class="px-5 py-4 text-left">Coupon 3</td>
-            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-pink-200 text-pink-800"><i class="fas fa-clock"></i> Expired</span></td>
-            <td class="px-5 py-4 text-left"><time datetime="{{ today()->subDays(5)->format('dS M Y, h:i A') }}">{{ today()->subDays(5)->endOfDay()->format('dS M Y, h:i A') }}</time></td>
-            <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}</time></td>
-            <td>
-                <div class="relative">
-                    <button class="btnAction" data-coupon="#coupon-3"><i class="fas fa-ellipsis-v"></i></button>
+                            <button class="block sm:inline ml-3 text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150 pr-5 btnDeleteActions" data-actionform="#formDeleteCoupon-{{ $coupon->id }}" data-action="temp-delete">Delete</button>
+                        </form>
+                    @else
+                        <form method="POST" action="{{ route('admin.coupons.restore', $coupon->id) }}" id="formRestoreCoupon-{{ $coupon->id }}">
+                            @csrf
+                            @method('PATCH')
 
-                    <div class="hidden linksAction absolute top-0 right-6 mt-5 w-24 rounded bg-white border shadow z-50" id="coupon-3">
-                        <ul class="p-0 m-0">
-                            <li>
-                                <a href="{{ route('admin.coupons.edit', 1) }}" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Edit</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Delete</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr class="border-b border-gray-100 text-sm text-gray-600">
-            <td class="px-5 py-4 text-left">#{{ mt_rand(1, 99999) }}</td>
-            <td class="px-5 py-4 text-left">Coupon 4</td>
-            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-red-200 text-red-800"><i class="fas fa-times"></i> Temporarily Deleted</span></td>
-            <td class="px-5 py-4 text-left"><time datetime="{{ today()->addDays(5)->format('dS M Y, h:i A') }}">{{ today()->addDays(5)->endOfDay()->format('dS M Y, h:i A') }}</time></td>
-            <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}</time></td>
-            <td>
-                <div class="relative">
-                    <button class="btnAction" data-coupon="#coupon-4"><i class="fas fa-ellipsis-v"></i></button>
+                            <button class="block sm:inline ml-3 text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150 btnDeleteActions" data-actionform="#formRestoreCoupon-{{ $coupon->id }}" data-action="restore">Restore</button>
+                        </form>
 
-                    <div class="hidden linksAction absolute top-0 right-6 mt-5 w-24 rounded bg-white border shadow z-50" id="coupon-4">
-                        <ul class="p-0 m-0">
-                            <li>
-                                <a href="{{ route('admin.coupons.edit', 1) }}" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Edit</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Delete</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </td>
-        </tr>
+                        <form action="{{ route('admin.coupons.destroy', $coupon->id) }}" id="formDestroyCoupon-{{ $coupon->id }}">
+                            @csrf
+                            @method('DELETE')
+
+                            <button class="block sm:inline mt-0 ml-3 text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150 pr-5 btnDeleteActions" data-actionform="#formDestroyCoupon-{{ $coupon->id }}" data-action="destroy">Destroy</button>
+                        </form>
+                    @endif
+                </td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="5" class="text-center text-gray-600 py-2 text-sm">No records found</td>
+            </tr>
+        @endforelse
     </tbody>
 </table>

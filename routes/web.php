@@ -42,7 +42,12 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
 
     Route::name('.coupons')->prefix('coupons')->group(function () {
         Route::get('/', 'CouponsController@index');
+        Route::post('/', 'CouponsController@store')->name('.store');
         Route::get('/{id}/edit', 'CouponsController@edit')->name('.edit');
+        Route::patch('/{id}', 'CouponsController@update')->name('.update');
+        Route::delete('/{id}/delete', 'CouponsController@delete')->name('.delete');
+        Route::patch('/{id}/restore', 'CouponsController@restore')->name('.restore');
+        Route::delete('/{id}/destroy', 'CouponsController@destroy')->name('.destroy');
     });
 
     Route::name('.products')->prefix('products')->group(function () {
