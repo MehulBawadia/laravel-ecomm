@@ -31,7 +31,13 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
 
     Route::name('.tags')->prefix('tags')->group(function () {
         Route::get('/', 'TagsController@index');
+        Route::post('/', 'TagsController@store')->name('.store');
         Route::get('/{id}/edit', 'TagsController@edit')->name('.edit');
+        Route::patch('/{id}', 'TagsController@update')->name('.update');
+        Route::patch('/{id}/seo', 'TagsController@updateSeo')->name('.updateSeo');
+        Route::delete('/{id}/delete', 'TagsController@delete')->name('.delete');
+        Route::patch('/{id}/restore', 'TagsController@restore')->name('.restore');
+        Route::delete('/{id}/destroy', 'TagsController@destroy')->name('.destroy');
     });
 
     Route::name('.coupons')->prefix('coupons')->group(function () {
