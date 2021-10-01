@@ -61,4 +61,24 @@ class User extends Authenticatable
 
         return route('homePage');
     }
+
+    /**
+     * Get the full name of the user.
+     *
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    /**
+     * Get the uri/path of the user's avatar.
+     *
+     * @return string
+     */
+    public function getAvatarPath()
+    {
+        return $this->avatar ? asset($this->avatar) : asset('/images/user-default.jpg');
+    }
 }

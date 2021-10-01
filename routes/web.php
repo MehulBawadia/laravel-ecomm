@@ -17,6 +17,8 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
     Route::get('/logout', 'DashboardController@logout')->name('.logout');
 
     Route::get('/account-settings', 'AccountSettingsController@index')->name('.accountSettings');
+    Route::patch('/account-settings/general', 'AccountSettingsController@updateGeneral')->name('.accountSettings.general');
+    Route::delete('/account-settings/delete-avatar', 'AccountSettingsController@deleteAvatar')->name('.accountSettings.deleteAvatar');
 
     Route::name('.categories')->prefix('categories')->group(function () {
         Route::get('/', 'CategoriesController@index');

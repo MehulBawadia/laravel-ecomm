@@ -9,7 +9,7 @@
 
             <div class="hidden md:flex items-center">
                 <div class="flex-none">
-                    <img src="{{ asset('/images/user-default.jpg') }}" alt="Administrator" title="Administrator" class="rounded-full w-8 h-8" />
+                    <img src="{{ auth()->user()->getAvatarPath() }}" alt="{{ auth()->user()->getFullName() }}" title="{{ auth()->user()->getFullName() }}" class="rounded w-8 h-8" />
                 </div>
 
                 <div class="ml-2 text-gray-500 text-sm relative">
