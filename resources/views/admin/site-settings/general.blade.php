@@ -16,9 +16,9 @@
 @endsection
 
 @section('content')
-    <section class="personalInformation">
+    <section class="personalInformation mt-8 pt-16 px-10">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8">Address Information</h2>
+            <h2 class="text-xl font-medium tracking-wide">Address Information</h2>
 
             <div class="mt-3 bg-gray-50 rounded shadow overflow-hidden">
                 <form action="{{ route('admin.siteSettingsGeneral.updateAddressInfo') }}" method="POST" id="formAddressInformation">
@@ -80,7 +80,7 @@
                     </div>
 
                     <div class="bg-gray-50 px-4 py-4">
-                        <button type="submit" class="bg-blue-500 text-gray-50 py-2 px-3 rounded focus:outline-none focus:bg-blue-600 tracking-wider font-medium btnUpdateAddressInfo">Update</button>
+                        <button type="submit" class="w-36 bg-indigo-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium btnUpdateAddressInfo">Update</button>
 
                         <a href="{{ route('admin.dashboard') }}" class="ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider">Cancel</a>
                     </div>
@@ -89,7 +89,7 @@
         </div>
     </section>
 
-    <section class="contactInformation my-16">
+    <section class="contactInformation my-16 px-10">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide mt-8 mx-auto">Contact Information</h2>
 
@@ -122,7 +122,7 @@
                     </div>
 
                     <div class="bg-gray-50 px-4 py-4">
-                        <button type="submit" class="bg-blue-500 text-gray-50 py-2 px-3 rounded focus:outline-none focus:bg-blue-600 tracking-wider font-medium btnUpdateContactInfo">Update</button>
+                        <button type="submit" class="w-36 bg-indigo-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium btnUpdateContactInfo">Update</button>
 
                         <a href="{{ route('admin.dashboard') }}" class="ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider">Cancel</a>
                     </div>
@@ -131,7 +131,7 @@
         </div>
     </section>
 
-    <section class="orderEmailInformation my-16">
+    <section class="orderEmailInformation my-16 px-10">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide mt-8">Order E-Mail Information</h2>
 
@@ -164,7 +164,7 @@
                     </div>
 
                     <div class="bg-gray-50 px-4 py-4">
-                        <button type="submit" class="bg-blue-500 text-gray-50 py-2 px-3 rounded focus:outline-none focus:bg-blue-600 tracking-wider font-medium btnUpdateOrderEmailInfo">Update</button>
+                        <button type="submit" class="w-36 bg-indigo-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium btnUpdateOrderEmailInfo">Update</button>
 
                         <a href="{{ route('admin.dashboard') }}" class="ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider">Cancel</a>
                     </div>
