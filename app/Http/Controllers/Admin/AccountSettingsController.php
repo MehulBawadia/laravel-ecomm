@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Traits\CreateDirectory;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
 class AccountSettingsController extends Controller
@@ -57,6 +58,40 @@ class AccountSettingsController extends Controller
             'message'  => 'Personal details updated successfully.',
             'avatar' => $user->avatar ?? null,
             'avatar_path' => $user->fresh()->getAvatarPath(),
+        ]);
+    }
+
+    /**
+     * Change the password of the admin user.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function changePassword(Request $request)
+    {
+        $this->validate($request, [
+            'current_password' => 'required',
+            'new_password' => 'required',
+            'repeat_new_password' => 'required|same:new_password',
+        ]);
+
+        $validCurrentPassword = Hash::check($request->current_password, auth()->user()->password);
+        if ($validCurrentPassword) {
+            auth()->user()->update([
+                'password' => bcrypt($request->new_password),
+            ]);
+
+            return response()->json([
+                'status'   => 'success',
+                'title'    => 'Success !',
+                'message'  => 'Password changed successfully.',
+            ]);
+        }
+
+        return response()->json([
+            'status'   => 'failed',
+            'title'    => 'Failed !',
+            'message'  => 'Invalid current password.',
         ]);
     }
 
