@@ -15,8 +15,8 @@
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide mt-8 ml-4">Overview</h2>
 
-            <div class="flex flex-wrap items-center px-4 mt-3 -mx-3">
-                <div class="w-full sm:w-1/2 lg:w-1/3 px-3 pb-6">
+            <div class="flex flex-wrap items-center px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+                <div class="w-full">
                     <div class="bg-white rounded-xl overflow-hidden shadow">
                         <div class="flex items-center px-4 py-6">
                             <div class="bg-indigo-500 text-white mx-3 h-full text-2xl px-4 py-2 rounded">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full sm:w-1/2 lg:w-1/3 px-3 pb-6">
+                <div class="w-full">
                     <div class="bg-white rounded-xl overflow-hidden shadow">
                         <div class="flex items-center px-4 py-6">
                             <div class="bg-indigo-500 text-white mx-3 h-full text-2xl px-3 py-2 rounded">
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full sm:w-1/2 lg:w-1/3 px-3 pb-6">
+                <div class="w-full">
                     <div class="bg-white rounded-xl overflow-hidden shadow">
                         <div class="flex items-center px-4 py-6">
                             <div class="bg-indigo-500 text-white mx-3 h-full text-2xl px-3 py-2 rounded">
