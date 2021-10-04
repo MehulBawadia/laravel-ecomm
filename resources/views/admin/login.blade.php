@@ -9,13 +9,13 @@
         <div class="container mx-auto">
             <div class="flex justify-center items-center px-4 py-8">
                 <div class="w-full md:w-4/5 lg:w-1/2 rounded overflow-hidden">
+                    <div class="text-center text-indigo-600 my-8 font-bold text-2xl">
+                        <span class="text-2xl"><i class="fas fa-shopping-cart"></i></span>
+                        {{ config('app.name') }}
+                    </div>
+
                     <form action="{{ route('admin.login.check') }}" method="POST" id="formLoginAdmin">
                         @csrf
-
-                        <div class="text-center text-indigo-600 my-8 font-bold text-2xl">
-                            <span class="text-2xl"><i class="fas fa-shopping-cart"></i></span>
-                            {{ config('app.name') }}
-                        </div>
 
                         <h1 class="font-Rubik font-bold text-2xl uppercase text-gray-900">Login Administrator</h1>
 
