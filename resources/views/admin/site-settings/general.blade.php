@@ -112,8 +112,8 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col md:flex-row items-center gap-4 mt-5">
-                            <div class="w-1/2">
+                        <div class="flex flex-col md:flex-row gap-4 mt-5">
+                            <div class="w-full lg:w-1/2">
                                 <label for="fax_number" class="text-gray-500">Fax Number <small>(Optional)</small>:</label>
                                 <input type="text" name="fax_number" id="fax_number" value="{{ $contact['fax_number'] ?? '' }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="9876543210" />
                                 <span data-name="fax_number"></span>
@@ -154,8 +154,8 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col md:flex-row items-center gap-4 mt-5">
-                            <div class="w-1/2">
+                        <div class="flex flex-col md:flex-row gap-4 mt-5">
+                            <div class="w-full lg:w-1/2">
                                 <label for="order_notification_email" class="text-gray-500">Order Notification E-Mails <small>(Comma separated)</small>:</label>
                                 <input type="text" name="order_notification_email" id="order_notification_email" value="{{ $orderEmail['order_notification_email'] ?? '' }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="johndoe@example.com,adminorders@example.com" />
                                 <span data-name="order_notification_email"></span>
