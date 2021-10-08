@@ -5,12 +5,12 @@
 
         <div class="bg-white px-4 py-4">
             <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-                <div class="w-2/3">
+                <div class="w-full md:w-2/3">
                     <label for="name" class="text-gray-500">Name:</label>
                     <input type="text" name="name" id="name" value="{{ $category->name }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Category 1" required autofocus />
                     <span data-name="name"></span>
                 </div>
-                <div class="w-1/3">
+                <div class="w-full md:w-1/3">
                     <label for="status" class="text-gray-500">Status:</label>
                     <select name="status" id="status" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500">
                         @foreach ($statuses as $key => $status)
