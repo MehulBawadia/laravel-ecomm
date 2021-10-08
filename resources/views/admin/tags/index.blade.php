@@ -16,9 +16,9 @@
 @endsection
 
 @section('content')
-    <section class="latestOrders mt-8 pt-16">
+    <section class="latestOrders mt-8 pt-16 px-6">
         <div class="container mx-auto">
-            <div class="flex justify-between items-center mx-4">
+            <div class="flex justify-between items-center">
                 <h2 class="text-xl font-medium tracking-wide">All Tags</h2>
 
                 <div>
@@ -28,7 +28,7 @@
 
             @include('admin.tags._create')
 
-            <div class="bg-white rounded-md shadow mx-4 mt-3 overflow-x-auto tagsTable">
+            <div class="bg-white rounded-md shadow mt-3 overflow-x-auto tagsTable">
                 @include('admin.tags._table')
             </div>
         </div>

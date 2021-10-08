@@ -18,7 +18,7 @@
 @endsection
 
 @section('content')
-    <section class="generalInformation px-10 mt-8 pt-16">
+    <section class="generalInformation mt-8 pt-16 px-6">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide">General Information</h2>
 
@@ -26,7 +26,7 @@
         </div>
     </section>
 
-    <section class="seoSection px-10 my-16">
+    <section class="seoSection my-16 px-5">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide">SEO Details</h2>
 
