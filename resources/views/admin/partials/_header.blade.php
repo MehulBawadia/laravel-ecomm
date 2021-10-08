@@ -1,6 +1,6 @@
 <section class="pageHeader bg-white shadow fixed w-full md:w-3/4 lg:w-5/6">
     <div class="container mx-auto">
-        <div class="flex justify-between items-center px-4 py-4">
+        <div class="flex justify-between items-center px-6 py-4 xPaddingOnPageTitle">
             @yield('pageTitle')
 
             <a href="#" class="block md:hidden text-2xl bottomNav">
