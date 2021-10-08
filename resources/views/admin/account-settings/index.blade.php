@@ -70,11 +70,11 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col md:flex-row justify-center gap-4 mt-5">
+                        <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-4 mt-5">
                             <div>
-                                <img src="{{ $user->getAvatarPath() }}" alt="{{ $user->first_name . ' ' . $user->last_name }}" title="{{ $user->first_name . ' ' . $user->last_name }}" class="rounded w-24 h-24 avatar" />
+                                <img src="{{ $user->getAvatarPath() }}" alt="{{ $user->first_name . ' ' . $user->last_name }}" title="{{ $user->first_name . ' ' . $user->last_name }}" class="rounded w-24 h-24 border avatar" />
 
-                                <div class="deleteAvatar @if (! $user->avatar) hidden @endif">
+                                <div class="text-center mt-1 deleteAvatar @if (! $user->avatar) hidden @endif">
                                     <button type="button" class="text-sm text-red-600 btnDeleteAvatarImage">Delete</button>
                                 </div>
                             </div>
