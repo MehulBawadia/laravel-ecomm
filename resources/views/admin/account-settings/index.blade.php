@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-    <section class="personalInformation px-10 pt-16 mt-8">
+    <section class="personalInformation pt-16 mt-8 px-6">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide">Personal Information</h2>
 
@@ -97,7 +97,7 @@
         </div>
     </section>
 
-    <section class="changePassword px-10 py-8 mt-8">
+    <section class="changePassword py-8 mt-8 px-6">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide">Change Password</h2>
 
