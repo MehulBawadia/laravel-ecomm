@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-    <section class="personalInformation mt-8 pt-16 px-10">
+    <section class="personalInformation mt-8 pt-16 px-6">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide">Address Information</h2>
 
@@ -89,7 +89,7 @@
         </div>
     </section>
 
-    <section class="contactInformation my-16 px-10">
+    <section class="contactInformation my-16 px-6">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide mt-8 mx-auto">Contact Information</h2>
 
@@ -131,7 +131,7 @@
         </div>
     </section>
 
-    <section class="orderEmailInformation my-16 px-10">
+    <section class="orderEmailInformation my-16 px-6">
         <div class="container mx-auto">
             <h2 class="text-xl font-medium tracking-wide mt-8">Order E-Mail Information</h2>
 
