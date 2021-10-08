@@ -11,11 +11,11 @@
 @endsection
 
 @section('content')
-    <section class="dashboard pt-16">
+    <section class="dashboard pt-16 px-6">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-4">Overview</h2>
+            <h2 class="text-xl font-medium tracking-wide mt-8">Overview</h2>
 
-            <div class="flex flex-wrap items-center px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+            <div class="flex flex-wrap items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
                 <div class="w-full">
                     <div class="bg-white rounded-xl overflow-hidden shadow">
                         <div class="flex items-center px-4 py-6">
@@ -68,11 +68,11 @@
         </div>
     </section>
 
-    <section class="latestOrders mb-12">
+    <section class="latestOrders mb-12 px-6">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-4">Latest Orders</h2>
+            <h2 class="text-xl font-medium tracking-wide mt-8">Latest Orders</h2>
 
-            <div class="bg-white rounded-md overflow-hidden shadow mx-4 mt-3">
+            <div class="bg-white rounded-md overflow-hidden shadow mt-3">
                 <table class="w-full">
                     <thead>
                         <tr class="bg-gray-50">
@@ -161,11 +161,11 @@
         </div>
     </section>
 
-    <section class="latestOrders my-12">
+    <section class="latestOrders my-12 px-6">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-4">Latest Users</h2>
+            <h2 class="text-xl font-medium tracking-wide mt-8">Latest Users</h2>
 
-            <div class="bg-white rounded-md overflow-hidden shadow mx-4 mt-3">
+            <div class="bg-white rounded-md overflow-hidden shadow mt-3">
                 <table class="w-full">
                     <thead>
                         <tr class="bg-gray-50">
