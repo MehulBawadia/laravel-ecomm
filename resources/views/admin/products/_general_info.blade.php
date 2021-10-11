@@ -3,49 +3,46 @@
         @csrf
 
         <div class="bg-white px-4 py-4">
-            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-                <div class="w-1/3">
+            <div class="grid grid-cols-1 sm:grid-col-2 md:grid-cols-3 gap-4">
+                <div class="w-full">
                     <label for="code" class="text-gray-500">Code:</label>
                     <input type="text" name="code" id="code" value="PRD-123" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="PRD-123" required autofocus />
                 </div>
-                <div class="w-2/3">
+                <div class="w-full">
                     <label for="full_name" class="text-gray-500">Name:</label>
                     <input type="text" name="full_name" id="full_name" value="Product 1" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Product 1" required />
                 </div>
-                <div class="w-1/4">
-                    <label for="full_name" class="text-gray-500">Status:</label>
-                    <select name="status" id="status" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500">
-                        <option value="draft">Draft</option>
-                        <option value="published">Published</option>
-                    </select>
+                <div class="w-full">
+                    <label for="sku" class="text-gray-500">SKU:</label>
+                    <input type="text" name="sku" id="sku" value="PRD165SDG" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Product 1" required />
                 </div>
             </div>
 
-            <div class="mt-5 flex flex-col md:flex-row items-center justify-center gap-4">
-                <div class="w-1/3">
+            <div class="grid grid-cols-1 sm:grid-col-2 md:grid-cols-3 gap-4 mt-5">
+                <div class="w-full">
                     <label for="rate" class="text-gray-500">Rate (in INR):</label>
                     <input type="text" name="rate" id="rate" value="5000" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="2000" required />
                 </div>
-                <div class="w-1/3">
+                <div class="w-full">
                     <label for="discount_percent" class="text-gray-500">Discount Percent <small>(Optional)</small>:</label>
                     <input type="text" name="discount_percent" id="discount_percent" value="0.00" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Product 1" />
                 </div>
-                <div class="w-1/3">
+                <div class="w-full">
                     <label for="tax_percent" class="text-gray-500">Tax Percent:</label>
                     <input type="text" name="tax_percent" id="tax_percent" value="18.00" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="2000" required />
                 </div>
             </div>
 
-            <div class="mt-5 flex flex-col md:flex-row items-center justify-center gap-4">
-                <div class="w-1/3">
+            <div class="mt-5 grid grid-cols-1 sm:grid-col-2 md:grid-cols-3 gap-4">
+                <div class="w-full">
                     <label for="sort_number" class="text-gray-500">Sort Number:</label>
                     <input type="text" name="sort_number" id="sort_number" value="123" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="2" required />
                 </div>
-                <div class="w-1/3">
+                <div class="w-full">
                     <label for="stock_quantity" class="text-gray-500">Stock Quantity:</label>
                     <input type="text" name="stock_quantity" id="stock_quantity" value="10" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Product 1" />
                 </div>
-                <div class="w-1/3">
+                <div class="w-full">
                     <label for="weight" class="text-gray-500">Weight (in gms):</label>
                     <input type="text" name="weight" id="weight" value="500" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="2000" required />
                 </div>

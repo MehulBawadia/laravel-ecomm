@@ -7,6 +7,10 @@
 @section('pageStyles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.min.css" />
     <style>
+        .selectize-control .selectize-input {
+            z-index: 0;
+        }
+
         .selectize-control.multi .selectize-input>div {
             background: #3b82f6;
             color: #fff;
