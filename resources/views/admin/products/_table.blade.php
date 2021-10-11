@@ -29,24 +29,15 @@
                     </div>
                 </div>
             </td>
-            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-yellow-200 text-yellow-800"><i class="fas fa-file"></i> Draft</span></td>
+            <td class="px-5 py-4 text-left">
+                <span class="text-green-800"><i class="fas fa-check"></i> Published</span>
+            </td>
             <td class="px-5 py-4 text-right">&#8377; 15,000.00</td>
             <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}</time></td>
             <td>
-                <div class="relative">
-                    <button class="btnAction" data-product="#product-1"><i class="fas fa-ellipsis-v"></i></button>
+                <a href="{{ route('admin.products.edit', 1) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
 
-                    <div class="hidden linksAction absolute top-0 right-6 mt-5 w-24 rounded bg-white border shadow z-50" id="product-1">
-                        <ul class="p-0 m-0">
-                            <li>
-                                <a href="{{ route('admin.products.edit', 1) }}" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Edit</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Delete</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <a href="#" class="block ml-3 sm:inline text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150">Delete</a>
             </td>
         </tr>
         <tr class="border-b border-gray-100 text-sm text-gray-600">
@@ -68,24 +59,15 @@
                     </div>
                 </div>
             </td>
-            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-green-200 text-green-800"><i class="fas fa-check"></i> Published</span></td>
+            <td class="px-5 py-4 text-left">
+                <span class="text-green-800"><i class="fas fa-check"></i> Published</span>
+            </td>
             <td class="px-5 py-4 text-right">&#8377; 7,500.00</td>
             <td class="px-5 py-4 text-left"><time datetime="{{ today()->timezone('Asia/Kolkata')->subMinutes(30)->format('dS M Y, h:i A') }}">{{ today()->timezone('Asia/Kolkata')->subMinutes(30)->format('dS M Y, h:i A') }}</time></td>
             <td>
-                <div class="relative">
-                    <button class="btnAction" data-product="#product-2"><i class="fas fa-ellipsis-v"></i></button>
+                <a href="{{ route('admin.products.edit', 1) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
 
-                    <div class="hidden linksAction absolute top-0 right-6 mt-5 w-24 rounded bg-white border shadow z-50" id="product-2">
-                        <ul class="p-0 m-0">
-                            <li>
-                                <a href="{{ route('admin.products.edit', 1) }}" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Edit</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Delete</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <a href="#" class="block ml-3 sm:inline text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150">Delete</a>
             </td>
         </tr>
         <tr class="border-b border-gray-100 text-sm text-gray-600">
@@ -107,24 +89,15 @@
                     </div>
                 </div>
             </td>
-            <td class="px-5 py-4 text-left"><span class="rounded-full shadow px-4 py-1 bg-red-200 text-red-800"><i class="fas fa-times"></i> Temporarily Deleted</span></td>
+            <td class="px-5 py-4 text-left">
+                <span class="text-red-800"><i class="fas fa-times"></i> Temporarily Deleted</span>
+            </td>
             <td class="px-5 py-4 text-right">&#8377; 3,450.00</td>
             <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subHours(1)->format('dS M Y, h:i A') }}</time></td>
             <td>
-                <div class="relative">
-                    <button class="btnAction" data-product="#product-4"><i class="fas fa-ellipsis-v"></i></button>
+                <a href="{{ route('admin.products.edit', 1) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
 
-                    <div class="hidden linksAction absolute top-0 right-6 mt-5 w-24 rounded bg-white border shadow z-50" id="product-4">
-                        <ul class="p-0 m-0">
-                            <li>
-                                <a href="{{ route('admin.products.edit', 1) }}" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Edit</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block pl-2 py-1 hover:bg-blue-500 hover:text-white""><i class="fas fa-pencil"></i> Delete</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <a href="#" class="block ml-3 sm:inline text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150">Delete</a>
             </td>
         </tr>
     </tbody>
