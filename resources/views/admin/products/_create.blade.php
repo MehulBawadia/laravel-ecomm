@@ -1,4 +1,4 @@
-<div id="sectionAddNewProduct" class="overflow-hidden hidden bg-white rounded-md shadow mx-4 mt-3">
+<div id="sectionAddNewProduct" class="overflow-hidden hidden bg-white rounded-md shadow mt-3">
     <div class="bg-gray-50 px-4 py-2">
         <h2>Add New Product</h2>
     </div>
@@ -9,19 +9,19 @@
         <form action="#" method="POST" id="formAddProduct">
             @csrf
 
-            <div class="flex mt-5">
-                <div class="w-1/6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 mt-5 gap-x-4">
+                <div class="w-full">
                     <label for="code" class="text-gray-500">Code:</label>
                     <input type="text" name="code" id="code" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" required />
                 </div>
-                <div class="w-1/3 ml-5">
+                <div class="w-full">
                     <label for="name" class="text-gray-500">Name:</label>
                     <input type="text" name="name" id="name" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" required />
                 </div>
-                <div class="mt-7 ml-5 w-1/2">
-                    <button type="submit" class="w-36 bg-blue-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-blue-600 focus:bg-blue-600 tracking-wider font-medium">Add</button>
+                <div class="mt-5">
+                    <button type="submit" class="w-36 bg-indigo-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium btnAddProduct">Add</button>
 
-                    <button class="linkCancel ml-3 text-gray-500 hover:text-red-500 focus:text-red-500 focus:outline-none transition ease-in-out duration-150" title="Cancel">Cancel</button>
+                    <button class="linkCancel ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider" title="Cancel">Cancel</button>
                 </div>
             </div>
         </form>

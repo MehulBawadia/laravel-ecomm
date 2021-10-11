@@ -1,4 +1,4 @@
-<div class="w-2/3 mx-auto mt-3 bg-gray-50 rounded shadow overflow-hidden">
+<div class="w-full mx-auto mt-3 bg-gray-50 rounded shadow overflow-hidden">
     <form action="#" method="POST" id="formGeneralInfo">
         @csrf
 

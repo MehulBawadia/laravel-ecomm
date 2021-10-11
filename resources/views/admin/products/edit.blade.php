@@ -33,25 +33,25 @@
 @endsection
 
 @section('content')
-    <section class="generalInformation">
+    <section class="generalInformation mt-8 pt-16 px-6">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">General Information</h2>
+            <h2 class="text-xl font-medium tracking-wide mx-auto">General Information</h2>
 
             @include('admin.products._general_info')
         </div>
     </section>
 
-    <section class="seoSection my-16">
+    <section class="seoSection my-16 px-6">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">Images</h2>
+            <h2 class="text-xl font-medium tracking-wide mx-auto">Images</h2>
 
             @include('admin.products._images')
         </div>
     </section>
 
-    <section class="seoSection my-16">
+    <section class="seoSection my-16 px-6">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">SEO Details</h2>
+            <h2 class="text-xl font-medium tracking-wide mx-auto">SEO Details</h2>
 
             @include('admin.products._seo_details')
         </div>
