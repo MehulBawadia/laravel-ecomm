@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($products as $product)
+        @forelse ($products as $product)
             <tr class="border-b border-gray-100 text-sm text-gray-600">
                 <td class="px-5 py-4 text-left">#{{ $product->id }}</td>
                 <td class="px-5 py-4 text-left">
@@ -58,6 +58,8 @@
                     @endif
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <td colspan="5" class="py-4 text-center text-gray-600">No records found.</td>
+        @endforelse
     </tbody>
 </table>
