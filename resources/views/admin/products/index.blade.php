@@ -28,7 +28,7 @@
 
             @include('admin.products._create')
 
-            <div class="bg-white rounded-md shadow mt-3 overflow-x-auto">
+            <div class="bg-white rounded-md shadow mt-3 overflow-x-auto productsTable">
                 @include('admin.products._table')
             </div>
         </div>
@@ -131,7 +131,7 @@
                     jsNotify(res.status, res.message, res.title);
 
                     if (res.table) {
-                        $('.categoriesTable').html(res.table);
+                        $('.productsTable').html(res.table);
                     }
                 },
                 error: function (err) {
