@@ -6,17 +6,19 @@
     <div class="p-4">
         <p class="text-red-400 text-sm tracking-wider">You will be redirected to the Edit Product page once you click on Add button.</p>
 
-        <form action="#" method="POST" id="formAddProduct">
+        <form action="{{ route('admin.products.store') }}" method="POST" id="formAddProduct">
             @csrf
 
             <div class="grid grid-cols-1 sm:grid-cols-2 mt-5 gap-x-4">
                 <div class="w-full">
                     <label for="code" class="text-gray-500">Code:</label>
                     <input type="text" name="code" id="code" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" required />
+                    <span data-name="code"></span>
                 </div>
                 <div class="w-full">
                     <label for="name" class="text-gray-500">Name:</label>
                     <input type="text" name="name" id="name" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" required />
+                    <span data-name="name"></span>
                 </div>
                 <div class="mt-5">
                     <button type="submit" class="w-36 bg-indigo-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium btnAddProduct">Add</button>

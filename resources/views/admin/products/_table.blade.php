@@ -10,37 +10,43 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="border-b border-gray-100 text-sm text-gray-600">
-            <td class="px-5 py-4 text-left">#{{ mt_rand(1, 99999) }}</td>
-            <td class="px-5 py-4 text-left">
-                <div class="flex items-center">
-                    <div>
-                        <img src="{{ asset('/images/products/demo-image-1.jpg') }}" alt="Product-1" title="Product-1" class="w-16 rounded shadow" />
-                    </div>
+        @foreach ($products as $product)
+            <tr class="border-b border-gray-100 text-sm text-gray-600">
+                <td class="px-5 py-4 text-left">#{{ $product->id }}</td>
+                <td class="px-5 py-4 text-left">
+                    <div class="flex items-center">
+                        <div>
+                            <img src="{{ asset('/images/products/demo-image-1.jpg') }}" alt="{{ $product->name }}" title="{{ $product->name }}" class="w-16 rounded shadow" />
+                        </div>
 
-                    <div class="ml-4">
-                        <a href="{{ route('products.show', 'product-1') }}" class="d-block text-gray-700 text-blue-500 font-bold hover:text-blue-800 focus:text-blue-800 focus:outline-none transition ease-in-out duration-150" target="_blank">Product 1</a>
+                        <div class="ml-4">
+                            <a href="{{ route('products.show', $product->id) }}" class="d-block text-gray-700 text-blue-500 font-bold hover:text-blue-800 focus:text-blue-800 focus:outline-none transition ease-in-out duration-150" target="_blank">{{ $product->name }}</a>
 
-                        <div class="flex gap-x-4 mt-2">
-                            <div class="text-gray-500">PRD-{{ mt_rand(1, 99999) }}</div>
-                            <div class="text-gray-500">500 gms</div>
-                            <div class="text-gray-500">5 in stock</div>
+                            <div class="flex gap-x-4 mt-2">
+                                <div class="text-gray-500">{{ $product->code }}</div>
+                                <div class="text-gray-500">{{ $product->weight }}</div>
+                                <div class="text-gray-500">{{ $product->stock }} in stock</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </td>
-            <td class="px-5 py-4 text-left">
-                <span class="text-green-800"><i class="fas fa-check"></i> Published</span>
-            </td>
-            <td class="px-5 py-4 text-right">&#8377; 15,000.00</td>
-            <td class="px-5 py-4 text-left"><time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}</time></td>
-            <td>
-                <a href="{{ route('admin.products.edit', 1) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
+                </td>
+                <td class="px-5 py-4 text-left">
+                    @if ($product->deleted_at != null)
+                        <span class="text-green-800"><i class="fas fa-check"></i> Published</span>
+                    @else
+                        <span class="text-red-800"><i class="fas fa-times"></i> Temporarily Deleted</span>
+                    @endif
+                </td>
+                <td class="px-5 py-4 text-right">&#8377; {{ number_format($product->rate, 2) }}</td>
+                <td class="px-5 py-4 text-left"><time datetime="{{ $product->updated_at->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ $product->updated_at->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}</time></td>
+                <td>
+                    <a href="{{ route('admin.products.edit', $product->id) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
 
-                <a href="#" class="block ml-3 sm:inline text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150">Delete</a>
-            </td>
-        </tr>
-        <tr class="border-b border-gray-100 text-sm text-gray-600">
+                    <a href="#" class="block ml-3 sm:inline text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150">Delete</a>
+                </td>
+            </tr>
+        @endforeach
+        {{-- <tr class="border-b border-gray-100 text-sm text-gray-600">
             <td class="px-5 py-4 text-left">#{{ mt_rand(1, 99999) }}</td>
             <td class="px-5 py-4 text-left">
                 <div class="flex items-center">
@@ -99,6 +105,6 @@
 
                 <a href="#" class="block ml-3 sm:inline text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150">Delete</a>
             </td>
-        </tr>
+        </tr> --}}
     </tbody>
 </table>

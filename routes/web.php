@@ -55,7 +55,14 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
 
     Route::name('.products')->prefix('products')->group(function () {
         Route::get('/', 'ProductsController@index');
+        Route::post('/', 'ProductsController@store')->name('.store');
         Route::get('/{id}/edit', 'ProductsController@edit')->name('.edit');
+        Route::patch('/{id}/general', 'ProductsController@updateGeneral')->name('.updateGeneral');
+        Route::patch('/{id}/images', 'ProductsController@updateImages')->name('.updateImages');
+        Route::patch('/{id}/seo', 'ProductsController@updateSeo')->name('.updateSeo');
+        Route::delete('/{id}/delete', 'ProductsController@delete')->name('.delete');
+        Route::patch('/{id}/restore', 'ProductsController@restore')->name('.restore');
+        Route::delete('/{id}/destroy', 'ProductsController@destroy')->name('.destroy');
     });
 
     Route::name('.orders')->prefix('orders')->group(function () {
