@@ -1,4 +1,4 @@
-<div id="sectionAddNewUser" class="overflow-hidden hidden bg-white rounded-md shadow mx-4 mt-3">
+<div id="sectionAddNewUser" class="overflow-hidden hidden bg-white rounded-md shadow mt-3">
     <div class="bg-gray-50 px-4 py-2">
         <h2>Add New User</h2>
     </div>
@@ -9,19 +9,21 @@
         <form action="#" method="POST" id="formAddUser">
             @csrf
 
-            <div class="flex mt-5">
-                <div class="w-1/6">
-                    <label for="username" class="text-gray-500">Username:</label>
-                    <input type="text" name="username" id="username" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="userName" required />
+            <div class="grid grid-cols-1 sm:grid-cols-2 mt-5 gap-x-4">
+                <div class="w-full">
+                    <label for="email" class="text-gray-500">E-Mail:</label>
+                    <input type="email" name="email" id="email" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" required />
+                    <span data-name="email"></span>
                 </div>
-                <div class="w-1/3 ml-5">
-                    <label for="name" class="text-gray-500">Name:</label>
-                    <input type="text" name="name" id="name" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" required />
+                <div class="mt-5 sm:mt-0 w-full">
+                    <label for="password" class="text-gray-500">Password:</label>
+                    <input type="password" name="password" id="password" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" required />
+                    <span data-name="password"></span>
                 </div>
-                <div class="mt-7 ml-5 w-1/2">
-                    <button type="submit" class="w-36 bg-blue-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-blue-600 focus:bg-blue-600 tracking-wider font-medium">Add</button>
+                <div class="mt-5">
+                    <button type="submit" class="w-36 bg-indigo-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium btnAddUser">Add</button>
 
-                    <button class="linkCancel ml-3 text-gray-500 hover:text-red-500 focus:text-red-500 focus:outline-none transition ease-in-out duration-150" title="Cancel">Cancel</button>
+                    <button class="linkCancel ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider" title="Cancel">Cancel</button>
                 </div>
             </div>
         </form>

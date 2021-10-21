@@ -16,19 +16,19 @@
 @endsection
 
 @section('content')
-    <section class="latestOrders my-12">
+    <section class="latestOrders mt-8 pt-16 px-6">
         <div class="container mx-auto">
-            <div class="flex justify-between items-center mx-4">
+            <div class="flex justify-between items-center">
                 <h2 class="text-xl font-medium tracking-wide">All Users</h2>
 
                 <div>
-                    <button class="linkAddNewUser bg-blue-500 text-sm text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-blue-600 focus:bg-blue-600 tracking-wider font-medium"><i class="fas fa-plus text-xs"></i> Add New</button>
+                    <button class="linkAddNewUser bg-indigo-500 text-sm text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium"><i class="fas fa-plus text-xs"></i> Add New</button>
                 </div>
             </div>
 
             @include('admin.users._create')
 
-            <div class="bg-white rounded-md shadow mx-4 mt-3">
+            <div class="bg-white rounded-md shadow mt-3 overflow-x-auto allUsersTable">
                 @include('admin.users._table')
             </div>
         </div>

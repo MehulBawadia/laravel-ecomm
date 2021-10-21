@@ -1,7 +1,7 @@
 @extends('admin.partials._layout')
 
 @section('title')
-    <title>Edit: Murli Bhai | {{ config('app.name') }}</title>
+    <title>Edit: {{ $user->getFullName() }} | {{ config('app.name') }}</title>
     <link rel="preconnect" href="https://source.unsplash.com" />
 @endsection
 
@@ -14,22 +14,22 @@
             <li>/</li>
         </ul>
 
-        <h1 class="text-2xl font-Rubik font-bold uppercase tracking-wide leading-none ml-3">Edit: Murli Bhai</h1>
+        <h1 class="text-2xl font-Rubik font-bold uppercase tracking-wide leading-none ml-3">Edit: {{ $user->getFullName() }}</h1>
     </div>
 @endsection
 
 @section('content')
-    <section class="personalInformation">
+    <section class="personalInformation mt-8 pt-16 px-6">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">Personal Information</h2>
+            <h2 class="text-xl font-medium tracking-wide">Personal Information</h2>
 
-            <div class="w-2/3 mx-auto mt-3 bg-gray-50 rounded shadow overflow-hidden">
+            <div class="mt-3 bg-gray-50 rounded shadow overflow-hidden">
                 <form action="#" method="POST" id="formPersonalInfo">
                     @csrf
 
                     <div class="bg-white px-4 py-4">
                         <div class="flex items-center justify-center">
-                            <img src="https://source.unsplash.com/300x300/?male-profile-picture" alt="Murli Bhai" class="rounded-full w-28 block">
+                            <img src="{{ $user->getAvatarPath() }}" alt="{{ $user->getFullName() }}" class="rounded-full w-28 block">
 
                             <a href="#" class="text-sm text-red-400 ml-3"><i class="fas fa-trash"></i> Remove</a>
                         </div>
@@ -37,37 +37,43 @@
                         <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-5">
                             <div class="w-full">
                                 <label for="first_name" class="text-gray-500">First Name:</label>
-                                <input type="text" name="first_name" id="first_name" value="Murli" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="John" />
+                                <input type="text" name="first_name" id="first_name" value="{{ $user->first_name }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="John" />
+                                <span data-name="first_name"></span>
                             </div>
 
                             <div class="w-full">
                                 <label for="last_name" class="text-gray-500">Last Name:</label>
-                                <input type="text" name="last_name" id="last_name" value="Bhai" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Doe" />
+                                <input type="text" name="last_name" id="last_name" value="{{ $user->last_name }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Doe" />
+                                <span data-name="last_name"></span>
                             </div>
                         </div>
 
                         <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-5">
                             <div class="w-full">
                                 <label for="username" class="text-gray-500">Username:</label>
-                                <input type="text" name="username" id="username" value="murliBhaiMBBS" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="johnDoe" />
+                                <input type="text" name="username" id="username" value="{{ $user->username }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="johnDoe" />
+                                <span data-name="username"></span>
                             </div>
                             <div class="w-full">
                                 <label for="email" class="text-gray-500">E-mail:</label>
-                                <input type="email" name="email" id="email" value="murlibhaimbbs@example.com" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="john@example.com" />
+                                <input type="email" name="email" id="email" value="{{ $user->email }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="john@example.com" />
+                                <span data-name="email"></span>
                             </div>
                         </div>
 
                         <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-5">
                             <div class="w-full">
                                 <label for="contact_number" class="text-gray-500">Contact Number:</label>
-                                <input type="text" name="contact_number" id="contact_number" value="9876543210" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="9876543210" />
+                                <input type="text" name="contact_number" id="contact_number" value="{{ $user->contact_number }}" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="9876543210" />
+                                <span data-name="contact_number"></span>
                             </div>
                             <div class="w-full">
                                 <label for="gender" class="text-gray-500">Gender:</label>
                                 <select name="gender" id="gender" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400">
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
+                                    <option value="Male" @if ($user->gender == 'Male') selected="Male" @endif>Male</option>
+                                    <option value="Female" @if ($user->gender == 'Female') selected="Female" @endif>Female</option>
                                 </select>
+                                <span data-name="gender"></span>
                             </div>
                         </div>
 
@@ -75,31 +81,33 @@
                             <div class="w-full">
                                 <label for="upload_profile_picture" class="text-gray-500">Profile Picture:</label>
                                 <input type="file" name="upload_profile_picture" id="upload_profile_picture" class="block pl-2 py-2 w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" accept="image/png, image/jpeg, image/jpg" />
+                                <span data-name="upload_profile_picture"></span>
                             </div>
                             <div class="w-full">
                                 <label for="account_verified" class="mt-6 inline-block">
-                                    <input type="checkbox" name="account_verified" id="account_verified" class="form-checkbox" />
+                                    <input type="checkbox" name="account_verified" id="account_verified" class="form-checkbox" @if ($user->email_verified_at != null) checked @endif />
                                     <span class="ml-2 text-gray-500">Account Verified</span>
                                 </label>
+                                <span data-name="account_verified"></span>
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-gray-50 px-4 py-4">
-                        <button type="submit" class="bg-blue-500 text-gray-50 py-2 px-3 rounded focus:outline-none focus:bg-blue-600 tracking-wider font-medium">Update</button>
+                        <button type="submit" class="w-36 bg-indigo-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium btnUpdateGeneralInfo">Update</button>
 
-                        <a href="{{ route('admin.users') }}" class="ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider">Cancel</a>
+                        <a href="{{ route('admin.users') }}" class="ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider" title="Cancel and go to all users page">Cancel</a>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="changePassword my-16">
+    <section class="changePassword my-16 px-6">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 ml-64 mx-auto">Change Password</h2>
+            <h2 class="text-xl font-medium tracking-wide">Change Password</h2>
 
-            <div class="w-2/3 mx-auto mt-3 bg-gray-50 rounded shadow overflow-hidden">
+            <div class="mt-3 bg-gray-50 rounded shadow overflow-hidden">
                 <form action="#" method="POST" id="formChangePassword">
                     @csrf
 
@@ -117,9 +125,9 @@
                     </div>
 
                     <div class="bg-gray-50 px-4 py-4">
-                        <button type="submit" class="bg-blue-500 text-gray-50 py-2 px-3 rounded focus:outline-none focus:bg-blue-600 tracking-wider font-medium">Change</button>
+                        <button type="submit" class="w-36 bg-indigo-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium btnChangePassword">Change</button>
 
-                        <a href="{{ route('admin.users') }}" class="ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider">Cancel</a>
+                        <a href="{{ route('admin.users') }}" class="ml-3 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider" title="Cancel and go to all users page">Cancel</a>
                     </div>
                 </form>
             </div>
