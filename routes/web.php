@@ -72,7 +72,13 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
 
     Route::name('.users')->prefix('users')->group(function () {
         Route::get('/', 'UsersController@index');
+        Route::post('/create', 'UsersController@store')->name('.store');
         Route::get('/{id}/edit', 'UsersController@edit')->name('.edit');
+        Route::patch('/{id}/update-general', 'UsersController@updateGeneral')->name('.updateGeneral');
+        Route::patch('/{id}/change-password', 'UsersController@changePassword')->name('.changePassword');
+        Route::delete('/{id}/delete', 'UsersController@delete')->name('.delete');
+        Route::patch('/{id}/restore', 'UsersController@restore')->name('.restore');
+        Route::delete('/{id}/destroy', 'UsersController@destroy')->name('.destroy');
     });
 
     Route::name('.siteSettingsGeneral')->prefix('site-settings-general')->group(function () {

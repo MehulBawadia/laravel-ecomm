@@ -24,8 +24,9 @@
             <h2 class="text-xl font-medium tracking-wide">Personal Information</h2>
 
             <div class="mt-3 bg-gray-50 rounded shadow overflow-hidden">
-                <form action="#" method="POST" id="formPersonalInfo">
+                <form action="{{ route('admin.users.updateGeneral', $user->id) }}" method="POST" id="formPersonalInfo">
                     @csrf
+                    @method('PATCH')
 
                     <div class="bg-white px-4 py-4">
                         <div class="flex items-center justify-center">
@@ -70,8 +71,8 @@
                             <div class="w-full">
                                 <label for="gender" class="text-gray-500">Gender:</label>
                                 <select name="gender" id="gender" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400">
-                                    <option value="Male" @if ($user->gender == 'Male') selected="Male" @endif>Male</option>
-                                    <option value="Female" @if ($user->gender == 'Female') selected="Female" @endif>Female</option>
+                                    <option value="male" @if ($user->gender == 'male') selected @endif>Male</option>
+                                    <option value="female" @if ($user->gender == 'female') selected @endif>Female</option>
                                 </select>
                                 <span data-name="gender"></span>
                             </div>
@@ -85,7 +86,7 @@
                             </div>
                             <div class="w-full">
                                 <label for="account_verified" class="mt-6 inline-block">
-                                    <input type="checkbox" name="account_verified" id="account_verified" class="form-checkbox" @if ($user->email_verified_at != null) checked @endif />
+                                    <input type="checkbox" name="account_verified" id="account_verified" class="form-checkbox" @if ($user->email_verified_at != null) checked value="1" @endif />
                                     <span class="ml-2 text-gray-500">Account Verified</span>
                                 </label>
                                 <span data-name="account_verified"></span>
@@ -108,18 +109,21 @@
             <h2 class="text-xl font-medium tracking-wide">Change Password</h2>
 
             <div class="mt-3 bg-gray-50 rounded shadow overflow-hidden">
-                <form action="#" method="POST" id="formChangePassword">
+                <form action="{{ route('admin.users.changePassword', $user->id) }}" method="POST" id="formChangePassword">
                     @csrf
+                    @method('PATCH')
 
                     <div class="bg-white px-4 py-4">
                         <div class="flex flex-col md:flex-row items-center justify-center gap-4">
                             <div class="w-full">
                                 <label for="new_password" class="text-gray-500">New Password:</label>
                                 <input type="password" name="new_password" id="new_password" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Secret" />
+                                <span data-name="new_password"></span>
                             </div>
                             <div class="w-full">
                                 <label for="repeat_new_password" class="text-gray-500">Repeat New Password:</label>
                                 <input type="password" name="repeat_new_password" id="repeat_new_password" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Secret" />
+                                <span data-name="repeat_new_password"></span>
                             </div>
                         </div>
                     </div>
@@ -135,4 +139,98 @@
             <p class="text-gray-500 text-sm mt-8 text-center">This user was registered on <time datetime="{{ now()->timezone('Asia/Kolkata')->format('dS M Y, h:i A') }}">{{ now()->timezone('Asia/Kolkata')->subDays(2)->format('dS M Y, h:i A') }}</time></p>
         </div>
     </section>
+@endsection
+
+@section('pageScripts')
+    <script>
+        $('.btnUpdateGeneralInfo').on('click', function (e) {
+            e.preventDefault();
+
+            var self = $(this),
+                form = $('#formPersonalInfo');
+
+            form.find('span').removeClass('text-red-500 text-sm').html('');
+            form.find('input').removeClass('border-red-500');
+
+            self.addClass('opacity-50 cursor-not-allowed')
+                .html('<i class="fa fa-spinner fa-spin"></i> Updating...');
+
+            $.ajax({
+                url: form.attr('action'),
+                type: 'POST',
+                data: form.serialize(),
+                success: function (res) {
+                    self.removeClass('opacity-50 cursor-not-allowed').html('Update');
+
+                    jsNotify(res.status, res.message, res.title);
+                },
+                error: function (err) {
+                    self.removeClass('opacity-50 cursor-not-allowed').html('Update');
+
+                    var errors = null;
+
+                    if (err.status == 422) {
+                        errors = err.responseJSON.errors;
+                    }
+
+                    if (errors != null) {
+                        $.each(errors, function (index, value) {
+                            $('input[id="'+index+'"]').first().addClass('border-red-500');
+                            $('span[data-name="'+index+'"]').first().addClass('text-xs text-red-500').html('<i class="fas fa-times-circle"></i> ' + value);
+                        });
+                    } else {
+                        alert('Something went wrong!');
+                    }
+                }
+            });
+
+            return false;
+        });
+
+        $('.btnChangePassword').on('click', function (e) {
+            e.preventDefault();
+
+            var self = $(this),
+                form = $('#formChangePassword');
+
+            form.find('span').removeClass('text-red-500 text-sm').html('');
+            form.find('input').removeClass('border-red-500');
+
+            self.addClass('opacity-50 cursor-not-allowed')
+                .html('<i class="fa fa-spinner fa-spin"></i> Changing...');
+
+            $.ajax({
+                url: form.attr('action'),
+                type: 'POST',
+                data: form.serialize(),
+                success: function (res) {
+                    self.removeClass('opacity-50 cursor-not-allowed').html('Change');
+
+                    form[0].reset();
+
+                    jsNotify(res.status, res.message, res.title);
+                },
+                error: function (err) {
+                    self.removeClass('opacity-50 cursor-not-allowed').html('Change');
+
+                    var errors = null;
+
+                    if (err.status == 422) {
+                        errors = err.responseJSON.errors;
+                    }
+
+                    if (errors != null) {
+                        $.each(errors, function (index, value) {
+                            $('input[id="'+index+'"]').first().addClass('border-red-500');
+                            $('span[data-name="'+index+'"]').first().addClass('text-xs text-red-500').html('<i class="fas fa-times-circle"></i> ' + value);
+                        });
+                    } else {
+                        alert('Something went wrong!');
+                    }
+                }
+            });
+
+            return false;
+        });
+    </script>
 @endsection

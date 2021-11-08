@@ -41,21 +41,21 @@
                     <a href="{{ route('admin.users.edit', $user->id) }}" class="block sm:inline text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150">Edit</a>
 
                     @if ($user->deleted_at == null)
-                        <form method="POST" action="{{-- {{ route('admin.users.delete', $user->id) }} --}}" id="formDeleteUser-{{ $user->id }}">
+                        <form method="POST" action="{{ route('admin.users.delete', $user->id) }}" id="formDeleteUser-{{ $user->id }}">
                             @csrf
                             @method('DELETE')
 
                             <button class="block sm:inline ml-3 text-red-600 text-sm tracking-wider hover:text-red-800 focus:text-red-800 focus:outline-none transition ease-in-out duration-150 pr-5 btnDeleteActions" data-actionform="#formDeleteUser-{{ $user->id }}" data-action="temp-delete">Delete</button>
                         </form>
                     @else
-                        <form method="POST" action="{{-- {{ route('admin.users.restore', $user->id) }} --}}" id="formRestoreUser-{{ $user->id }}">
+                        <form method="POST" action="{{ route('admin.users.restore', $user->id) }}" id="formRestoreUser-{{ $user->id }}">
                             @csrf
                             @method('PATCH')
 
                             <button class="block sm:inline ml-3 text-indigo-600 text-sm tracking-wider hover:text-indigo-800 focus:text-indigo-800 focus:outline-none transition ease-in-out duration-150 btnDeleteActions" data-actionform="#formRestoreUser-{{ $user->id }}" data-action="restore">Restore</button>
                         </form>
 
-                        <form action="{{-- {{ route('admin.users.destroy', $user->id) }} --}}" id="formDestroyUser-{{ $user->id }}">
+                        <form action="{{ route('admin.users.destroy', $user->id) }}" id="formDestroyUser-{{ $user->id }}">
                             @csrf
                             @method('DELETE')
 
