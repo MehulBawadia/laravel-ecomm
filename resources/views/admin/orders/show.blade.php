@@ -36,25 +36,29 @@
 @endsection
 
 @section('content')
-    <section class="generalInformation">
+    <section class="generalInformation mt-8 pt-16 px-6">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 mx-4">Products Details</h2>
+            <div class="flex justify-between items-center">
+                <h2 class="text-xl font-medium tracking-wide">Products Details</h2>
+            </div>
 
             @include('admin.orders._products_info')
         </div>
     </section>
 
-    <section class="addressSection my-16">
+    <section class="addressSection mt-8">
         <div class="container mx-auto">
-            <h2 class="text-xl font-medium tracking-wide mt-8 mx-4">Address Details</h2>
+            <div class="flex justify-between items-center">
+                <h2 class="text-xl font-medium tracking-wide">Address Details</h2>
+            </div>
 
             @include('admin.orders._address_details')
         </div>
     </section>
 
-    <section class="historySection my-16">
+    <section class="historySection mt-8">
         <div class="container mx-auto">
-            <div class="flex justify-between items-center mx-4">
+            <div class="flex justify-between items-center">
                 <h2 class="text-xl font-medium tracking-wide">History Details</h2>
 
                 <div>

@@ -68,6 +68,7 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
     Route::name('.orders')->prefix('orders')->group(function () {
         Route::get('/', 'OrdersController@index');
         Route::get('/{id}/show', 'OrdersController@show')->name('.show');
+        Route::delete('/{id}/destroy', 'OrdersController@destroy')->name('.destroy');
     });
 
     Route::name('.users')->prefix('users')->group(function () {

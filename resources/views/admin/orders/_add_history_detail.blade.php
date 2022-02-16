@@ -1,4 +1,4 @@
-<div id="sectionAddNewHistory" class="overflow-hidden hidden bg-white rounded-md shadow mx-4 mt-3">
+<div id="sectionAddNewHistory" class="overflow-hidden hidden bg-white rounded-md shadow mt-3">
     <div class="bg-gray-50 px-4 py-2">
         <h2>Add New History</h2>
     </div>

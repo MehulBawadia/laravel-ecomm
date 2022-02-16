@@ -1,4 +1,4 @@
-<div class="mx-4 mt-3 bg-gray-50 rounded shadow overflow-hidden">
+<div class="mt-3 bg-gray-50 rounded shadow overflow-hidden">
     <table class="w-full">
         <thead class="bg-gray-200">
             <tr>
