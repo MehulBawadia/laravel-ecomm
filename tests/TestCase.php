@@ -38,6 +38,32 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
+     * Create a dummy user.
+     *
+     * @return \App\Models\User
+     */
+    public function dummyUser()
+    {
+        return User::factory()->create([
+            'first_name'       => 'Dummy',
+            'last_name'        => 'User',
+            'username'         => 'dummyUser',
+            'email'            => 'dummyuser@example.com',
+            'password'         => bcrypt('Password'),
+        ]);
+    }
+
+    /**
+     * Sign in the dummy user.
+     *
+     * @return  \App\Models\User
+     */
+    public function signInDummyUser()
+    {
+        return $this->be($this->dummyUser());
+    }
+
+    /**
      * Get the list of invalid E-Mail Addresses.
      *
      * @return  array
