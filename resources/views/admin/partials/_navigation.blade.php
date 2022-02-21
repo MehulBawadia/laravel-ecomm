@@ -11,6 +11,9 @@
             <a href="{{ route('admin.categories') }}" class="block @if (Str::contains(request()->url(), 'categories')) bg-blue-100 text-indigo-600 border-l-4 border-blue-600 @else text-gray-500 @endif py-2 px-3 tracking-wide hover:text-indigo-600 hover:bg-blue-100 border-l-4 border-transparent hover:border-blue-600 focus:text-indigo-600 focus:border-blue-600 focus:bg-blue-100 focus:outline-none transition ease-in-out duration-150" title="Go to Categories page"><span class="w-6 inline-block text-center"><i class="fas fa-arrows-alt text-lg"></i></span> <span class="ml-2">Categories</span></a>
         </li>
         <li>
+            <a href="{{ route('admin.brands') }}" class="block @if (Str::contains(request()->url(), 'brands')) bg-blue-100 text-indigo-600 border-l-4 border-blue-600 @else text-gray-500 @endif py-2 px-3 tracking-wide hover:text-indigo-600 hover:bg-blue-100 border-l-4 border-transparent hover:border-blue-600 focus:text-indigo-600 focus:border-blue-600 focus:bg-blue-100 focus:outline-none transition ease-in-out duration-150" title="Go to Tags page"><span class="w-6 inline-block text-center"><i class="fas fa-award text-lg"></i></span> <span class="ml-2">Brands</span></a>
+        </li>
+        <li>
             <a href="{{ route('admin.tags') }}" class="block @if (Str::contains(request()->url(), 'tags')) bg-blue-100 text-indigo-600 border-l-4 border-blue-600 @else text-gray-500 @endif py-2 px-3 tracking-wide hover:text-indigo-600 hover:bg-blue-100 border-l-4 border-transparent hover:border-blue-600 focus:text-indigo-600 focus:border-blue-600 focus:bg-blue-100 focus:outline-none transition ease-in-out duration-150" title="Go to Tags page"><span class="w-6 inline-block text-center"><i class="fas fa-tags text-lg"></i></span> <span class="ml-2">Tags</span></a>
         </li>
         <li>

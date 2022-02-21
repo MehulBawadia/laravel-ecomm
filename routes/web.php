@@ -43,6 +43,17 @@ Route::middleware('adminLoggedIn')->namespace('Admin')->name('admin')->prefix('a
         Route::delete('/{id}/destroy', 'TagsController@destroy')->name('.destroy');
     });
 
+    Route::name('.brands')->prefix('brands')->group(function () {
+        Route::get('/', 'BrandsController@index');
+        Route::post('/', 'BrandsController@store')->name('.store');
+        Route::get('/{id}/edit', 'BrandsController@edit')->name('.edit');
+        Route::patch('/{id}', 'BrandsController@update')->name('.update');
+        Route::patch('/{id}/seo', 'BrandsController@updateSeo')->name('.updateSeo');
+        Route::delete('/{id}/delete', 'BrandsController@delete')->name('.delete');
+        Route::patch('/{id}/restore', 'BrandsController@restore')->name('.restore');
+        Route::delete('/{id}/destroy', 'BrandsController@destroy')->name('.destroy');
+    });
+
     Route::name('.coupons')->prefix('coupons')->group(function () {
         Route::get('/', 'CouponsController@index');
         Route::post('/', 'CouponsController@store')->name('.store');
