@@ -118,4 +118,16 @@ Route::middleware('adminExists')->group(function () {
 
         Route::get('/order-placed/thank-you', 'OrderPlacedController@success')->name('orderPlaced.success');
     });
+
+    Route::prefix('users')->name('users')->namespace('Users')->group(function () {
+        Route::middleware('guest')->group(function () {
+            Route::get('/login', 'LoginController@index')->name('.login');
+            Route::post('/login', 'LoginController@check')->name('.login.check');
+        });
+
+        Route::middleware('userLoggedIn')->group(function () {
+            Route::get('/dashboard', 'DashboardController@index')->name('.dashboard');
+            Route::get('/logout', 'DashboardController@logout')->name('.logout');
+        });
+    });
 });
