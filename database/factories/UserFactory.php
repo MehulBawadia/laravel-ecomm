@@ -25,14 +25,14 @@ class UserFactory extends Factory
         $username = str_replace(
             ['!','@','$','%','^','&','*','(',')','#','_','-','.','\''],
             '_',
-            $this->faker->unique()->userName
+            $this->faker->unique()->userName()
         );
 
         return [
-            'first_name' => $this->faker->firstName,
-            'last_name' => $this->faker->lastName,
+            'first_name' => $this->faker->firstName(),
+            'last_name' => $this->faker->lastName(),
             'username' => $username,
-            'email' => $this->faker->unique()->safeEmail,
+            'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt('Password'),
             'contact_number' => '9876543210',
