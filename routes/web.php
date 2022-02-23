@@ -128,6 +128,11 @@ Route::middleware('adminExists')->group(function () {
         Route::middleware('userLoggedIn')->group(function () {
             Route::get('/dashboard', 'DashboardController@index')->name('.dashboard');
             Route::get('/logout', 'DashboardController@logout')->name('.logout');
+
+            Route::get('/account-settings', 'AccountSettingsController@index')->name('.accountSettings');
+            Route::patch('/account-settings/general', 'AccountSettingsController@updateGeneral')->name('.accountSettings.general');
+            Route::delete('/account-settings/delete-avatar', 'AccountSettingsController@deleteAvatar')->name('.accountSettings.deleteAvatar');
+            Route::patch('/account-settings/change-password', 'AccountSettingsController@changePassword')->name('.accountSettings.changePassword');
         });
     });
 });
