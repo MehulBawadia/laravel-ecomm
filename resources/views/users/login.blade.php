@@ -35,7 +35,7 @@
                             <div class="bg-gray-100 py-3 px-6">
                                 <button type="submit" class="w-full sm:w-48 bg-indigo-600 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-700 focus:bg-indigo-700 tracking-wider font-medium btnLoginUser">Login</button>
 
-                                <a href="{{ route('homePage') }}" class="block w-full text-center sm:inline sm:w-auto sm:ml-3 mt-5 sm:mt-0 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider">Cancel</a>
+                                <a href="{{ route('users.register') }}" class="ml-4 text-indigo-600 focus:outline-none hover:text-indigo-800 focus:text-indigo-800 tracking-wider font-medium transition ease-in-out duration-150">Don't have an account? Register here</a>
                             </div>
                         </form>
                     </div>
