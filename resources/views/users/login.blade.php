@@ -11,35 +11,35 @@
 @section('content')
     <section class="bg-gray-150 loginUser">
         <div class="container mx-auto">
-            <div class="flex justify-center items-center px-4 py-8">
-                <div class="w-full md:w-4/5 lg:w-1/2 rounded overflow-hidden">
-                    <form action="{{ route('users.login.check') }}" method="POST" id="formLoginUser">
-                        @csrf
+            <h1 class="font-Roboto font-semibold text-2xl uppercase text-gray-900 text-center mt-6">Login User</h1>
 
-                        <h1 class="font-Rubik font-bold text-2xl uppercase text-gray-900">Login User</h1>
+                <div class="flex items-center justify-center my-6 px-4">
+                    <div class="w-full bg-white md:w-4/5 lg:w-1/2 rounded overflow-hidden shadow shadow-zinc-700/50">
+                        <form action="{{ route('users.login.check') }}" method="POST" id="formLoginUser">
+                            @csrf
 
-                        <div class="mt-3 bg-white px-6 py-6 rounded-tr rounded-tl shadow">
-                            <div class="w-full">
-                                <label for="usernameOrEmail" class="text-gray-500">Username / E-Mail:</label>
-                                <input type="text" name="usernameOrEmail" id="usernameOrEmail" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="johnDoe / john@example.com" required autofocus />
-                                <span data-name="usernameOrEmail"></span>
+                            <div class="mt-3 bg-white px-6 py-6 rounded-tr rounded-tl">
+                                <div class="w-full">
+                                    <label for="usernameOrEmail" class="text-gray-500">Username / E-Mail:</label>
+                                    <input type="text" name="usernameOrEmail" id="usernameOrEmail" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="johnDoe / john@example.com" required autofocus />
+                                    <span data-name="usernameOrEmail"></span>
+                                </div>
+
+                                <div class="mt-5 w-full">
+                                    <label for="password" class="text-gray-500">Password:</label>
+                                    <input type="password" name="password" id="password" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Secret" required />
+                                    <span data-name="password"></span>
+                                </div>
                             </div>
 
-                            <div class="mt-5 w-full">
-                                <label for="password" class="text-gray-500">Password:</label>
-                                <input type="password" name="password" id="password" class="block w-full mt-1 border border-gray-300 rounded bg-gray-100 text-gray-800 focus:outline-none focus:bg-white focus:border-blue-500 placeholder-gray-400" placeholder="Secret" required />
-                                <span data-name="password"></span>
+                            <div class="bg-gray-100 py-3 px-6">
+                                <button type="submit" class="w-full sm:w-48 bg-indigo-600 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-700 focus:bg-indigo-700 tracking-wider font-medium btnLoginUser">Login</button>
+
+                                <a href="{{ route('homePage') }}" class="block w-full text-center sm:inline sm:w-auto sm:ml-3 mt-5 sm:mt-0 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider">Cancel</a>
                             </div>
-                        </div>
-
-                        <div class="bg-gray-50 py-3 px-6 shadow">
-                            <button type="submit" class="w-full sm:w-48 bg-indigo-500 text-gray-50 py-2 px-3 rounded focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 tracking-wider font-medium btnLoginUser">Login</button>
-
-                            <a href="{{ route('homePage') }}" class="block w-full text-center sm:inline sm:w-auto sm:ml-3 mt-5 sm:mt-0 border border-gray-300 bg-transparent text-gray-500 py-2 px-3 rounded hover:text-gray-600 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 focus:outline-none focus:bg-white tracking-wider">Cancel</a>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
         </div>
     </section>
 @endsection
