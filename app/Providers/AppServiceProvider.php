@@ -25,9 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $contactInfo = json_decode(SiteSetting::first()->contact_info, true);
+        View::composer('*', function ($view) {
+            $contactInfo = json_decode(SiteSetting::first()->contact_info, true);
 
-        View::share('support_email', $contactInfo['support_email']);
-        View::share('support_contact_number', $contactInfo['contact_number']);
+            $view->with('support_email', $contactInfo['support_email']);
+            $view->with('support_contact_number', $contactInfo['contact_number']);
+        });
     }
 }
