@@ -64,6 +64,37 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
+     * Generate Dummy SiteSettings for testing.
+     *
+     * @return \App\Models\SiteSetting
+     */
+    public function dummySiteSettings()
+    {
+        return \App\Models\SiteSetting::create([
+            'address_info' => json_encode([
+                'address_line_1' => 'Line 1',
+                'address_line_2' => 'Line 2',
+                'area' => 'Awesome Area',
+                'landmark' => 'Best Landmark',
+                'city' => 'Mumbai',
+                'pin_code' => '400001',
+                'state' => 'Maharashtra',
+                'country' => 'India',
+            ]),
+            'email_info' => json_encode([
+                'from_email' => 'no-reply@email@-example.com',
+                'from_name' => config('app.name'),
+                'order_notification_email' => 'admin@example.com',
+            ]),
+            'contact_info' => json_encode([
+                'support_email' => 'support@example.com',
+                'contact_number' => '+919876543210',
+                'fax_number' => '9876543210',
+            ]),
+        ]);
+    }
+
+    /**
      * Get the list of invalid E-Mail Addresses.
      *
      * @return  array
