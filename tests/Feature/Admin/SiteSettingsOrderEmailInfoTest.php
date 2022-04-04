@@ -35,6 +35,7 @@ class SiteSettingsOrderEmailInfoTest extends TestCase
     /** @test */
     public function admin_can_update_the_order_email_info()
     {
+        SiteSetting::truncate();
         $this->assertNull(SiteSetting::first());
 
         $payload = $this->mergeOrderEmailFormData(['from_email' => 'orders@example.com']);

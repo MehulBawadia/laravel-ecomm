@@ -35,6 +35,7 @@ class SiteSettingsContactInfoTest extends TestCase
     /** @test */
     public function admin_can_update_the_contact_info()
     {
+        SiteSetting::truncate();
         $this->assertNull(SiteSetting::first());
 
         $payload = $this->mergeContactFormData(['support_email' => 'support@example.com']);

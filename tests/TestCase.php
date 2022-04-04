@@ -16,6 +16,8 @@ abstract class TestCase extends BaseTestCase
      */
     public function dummySuperAdministrator()
     {
+        $this->dummySiteSettings();
+
         return User::factory()->create([
             'first_name'       => 'Super',
             'last_name'        => 'Administrator',

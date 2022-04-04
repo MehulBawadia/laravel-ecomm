@@ -30,6 +30,7 @@ class GenerateAdministratorTest extends TestCase
     /** @test */
     public function user_can_access_generate_admin_section_if_admin_does_not_exists()
     {
+        $this->dummySiteSettings();
         $this->withoutExceptionHandling()
             ->get($this->getUrl)
             ->assertViewIs('admin.generate')
@@ -39,6 +40,7 @@ class GenerateAdministratorTest extends TestCase
     /** @test */
     public function user_can_become_the_admin()
     {
+        $this->dummySiteSettings();
         $this->withoutExceptionHandling()
             ->post($this->postUrl, $data = $this->mergeFormData())
             ->assertJson([
@@ -55,6 +57,7 @@ class GenerateAdministratorTest extends TestCase
     /** @test */
     public function admin_is_logged_in_after_becoming_admin()
     {
+        $this->dummySiteSettings();
         $this->withoutExceptionHandling()
             ->post($this->postUrl, $data = $this->mergeFormData());
 

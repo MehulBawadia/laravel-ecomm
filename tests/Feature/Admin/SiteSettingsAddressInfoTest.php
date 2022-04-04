@@ -37,6 +37,7 @@ class SiteSettingsAddressInfoTest extends TestCase
     /** @test */
     public function admin_can_update_the_address_info()
     {
+        SiteSetting::truncate();
         $this->assertNull(SiteSetting::first());
 
         $payload = $this->mergeAddressFormData(['address_line_1' => 'Flat No. 666']);
