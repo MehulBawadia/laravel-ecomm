@@ -5,12 +5,12 @@
         <div class="flex items-center justify-between py-2 px-4 text-sm">
             <div class="hidden sm:block">
                 <span class="text-gray-400">Email:</span>
-                <a href="mailto:support&#64;example.com" class="ml-1 text-gray-700 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150" title="Support E-Mail">support&#64;example.com</a>
+                <a href="mailto:{{ $support_email }}" class="ml-1 text-gray-700 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150" title="Support E-Mail">{{ $support_email }}</a>
 
                 <span class="mx-2">|</span>
 
                 <span class="text-gray-400">Contact:</span>
-                <a href="tel:+919876543210" class="ml-1 text-gray-700 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150" title="Support Contact">+91 98765 43210</a>
+                <a href="tel:{{ $support_contact_number }}" class="ml-1 text-gray-700 hover:text-blue-500 focus:text-blue-500 focus:outline-none transition ease-in-out duration-150" title="Support Contact">{{ $support_contact_number }}</a>
             </div>
             <div class="mx-auto sm:m-0">
                 @guest
