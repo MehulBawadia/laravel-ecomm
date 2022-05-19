@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\SiteSetting;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,11 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('*', function ($view) {
-            $contactInfo = json_decode(SiteSetting::first()->contact_info, true);
-
-            $view->with('support_email', $contactInfo['support_email']);
-            $view->with('support_contact_number', $contactInfo['contact_number']);
-        });
+        $setting = json_decode(optional(cache('siteSettingsContact'))->contact_info, true) ?? [];
+        view()->share('support_email', $setting['support_email'] ?? '--');
+        view()->share('support_contact_number', $setting['contact_number'] ?? '--');
     }
 }
