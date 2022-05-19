@@ -51,6 +51,7 @@ class SiteSettingsContactInfoTest extends TestCase
         $setting = SiteSetting::first();
         $this->assertNotNull($setting->contact_info);
         $this->assertEquals(json_decode($setting->contact_info, true)['support_email'], 'support@example.com');
+        $this->assertNotNull(cache('siteSettingsContact'));
     }
 
     /** @test */

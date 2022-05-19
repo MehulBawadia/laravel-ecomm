@@ -80,10 +80,16 @@ class SiteSettingsGeneralController extends Controller
 
         $setting = SiteSetting::first();
         if (! $setting) {
-            SiteSetting::create(['contact_info' => json_encode($request->except(['_token', '_method']))]);
+            $setting = SiteSetting::create(['contact_info' => json_encode($request->except(['_token', '_method']))]);
         } else {
             $setting->update(['contact_info' => json_encode($request->except(['_token', '_method']))]);
+            $setting = $setting->fresh();
         }
+
+        cache()->forget('siteSettingsContact');
+        cache()->rememberForever('siteSettingsContact', function () use ($setting) {
+            return $setting;
+        });
 
         return response()->json([
             'status' => 'success',
@@ -108,10 +114,16 @@ class SiteSettingsGeneralController extends Controller
 
         $setting = SiteSetting::first();
         if (! $setting) {
-            SiteSetting::create(['email_info' => json_encode($request->except(['_token', '_method']))]);
+            $setting = SiteSetting::create(['email_info' => json_encode($request->except(['_token', '_method']))]);
         } else {
             $setting->update(['email_info' => json_encode($request->except(['_token', '_method']))]);
+            $setting = $setting->fresh();
         }
+
+        cache()->forget('siteSettingsEmail');
+        cache()->rememberForever('siteSettingsEmail', function () use ($setting) {
+            return $setting;
+        });
 
         return response()->json([
             'status' => 'success',
